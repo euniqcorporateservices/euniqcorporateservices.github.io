@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Euniq Corporate Services - SaaS Recruitment Platform</title>
+<title>Euniq Corporate Services</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -63,12 +63,15 @@ font-size:14px;
 display:none;
 font-size:26px;
 cursor:pointer;
+color:white;
 }
 
-/* MOBILE NAV */
+/* MOBILE NAV DROPDOWN */
 @media(max-width:768px){
 
-.menu-toggle{display:block;}
+.menu-toggle{
+display:block;
+}
 
 .nav{
 display:none;
@@ -78,16 +81,19 @@ top:60px;
 right:20px;
 background:#0b1220;
 padding:15px;
-border-radius:10px;
+border-radius:12px;
 width:200px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
-.nav.show{display:flex;}
+.nav.show{
+display:flex;
+}
 }
 
 /* HERO */
 .hero{
-height:80vh;
+height:75vh;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -107,7 +113,7 @@ background:rgba(7,11,22,0.75);
 .hero-content{
 position:relative;
 z-index:10;
-max-width:800px;
+max-width:750px;
 padding:20px;
 }
 
@@ -207,12 +213,19 @@ height:150px;
 object-fit:cover;
 }
 
-/* SaaS FEATURES */
-.feature{
+/* TESTIMONIAL */
+.testimonial{
+text-align:center;
 background:var(--card);
 padding:20px;
 border-radius:14px;
-border:1px solid rgba(255,255,255,0.05);
+}
+
+.testimonial img{
+width:60px;
+height:60px;
+border-radius:50%;
+margin-bottom:10px;
 }
 
 /* FOOTER */
@@ -238,6 +251,12 @@ font-size:13px;
 }
 
 .footer-nav a:hover{color:white;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.section{padding:50px 20px;}
+.hero{height:65vh;}
+}
 </style>
 
 </head>
@@ -262,40 +281,11 @@ font-size:13px;
 <!-- HERO -->
 <div class="hero">
 <div class="hero-content">
-<h1>SaaS Recruitment Platform for Global Hiring</h1>
-<p>Hire talent faster. Post jobs instantly. Build global teams.</p>
+<h1>Hire Top Global Talent Faster</h1>
+<p>We connect companies with pre-vetted professionals worldwide</p>
 
 <button class="btn btn-primary">Hire Talent</button>
 <button class="btn btn-outline">Get a Job</button>
-</div>
-</div>
-
-<!-- SaaS FEATURES -->
-<div class="section">
-<h2>Platform Features</h2>
-
-<div class="grid">
-
-<div class="feature">
-<b>Post Jobs Instantly</b>
-<p>Publish job openings in seconds and reach global candidates.</p>
-</div>
-
-<div class="feature">
-<b>Global Talent Pool</b>
-<p>Access verified professionals across multiple industries.</p>
-</div>
-
-<div class="feature">
-<b>Smart Matching</b>
-<p>AI-assisted candidate recommendations (UI ready for backend).</p>
-</div>
-
-<div class="feature">
-<b>Application Tracking</b>
-<p>Track applicants from CV submission to hiring stage.</p>
-</div>
-
 </div>
 </div>
 
@@ -315,8 +305,9 @@ font-size:13px;
 <b>Engineering</b>
 </div>
 
+<!-- FIXED HEALTHCARE IMAGE -->
 <div class="industry">
-<img src="https://images.unsplash.com/photo-1580281658629-7d5b8f6c3f0c">
+<img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
 <b>Healthcare</b>
 </div>
 
@@ -370,7 +361,7 @@ font-size:13px;
 <div class="benefit">
 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
 <b>Global Access</b>
-<p>Hire talent worldwide instantly.</p>
+<p>Access talent worldwide instantly.</p>
 </div>
 
 <div class="benefit">
