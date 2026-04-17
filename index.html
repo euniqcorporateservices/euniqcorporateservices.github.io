@@ -4,136 +4,93 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Euniq Recruitment SaaS</title>
+<title>Euniq Recruitment</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body{
-    margin:0;
-    font-family:Inter, sans-serif;
-    background:#0b1220;
-    color:#e6e9f2;
+margin:0;
+font-family:Inter;
+background:#0b1220;
+color:white;
 }
 
-/* TOP BAR */
+/* NAV */
 .topbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px;
-    background:#0a0f1c;
-    border-bottom:1px solid rgba(255,255,255,0.05);
-    position:sticky;
-    top:0;
-    z-index:100;
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:#0a0f1c;
+position:sticky;
+top:0;
 }
 
-.logo{
-    font-weight:700;
-    color:white;
-}
-
-/* NAV LINKS */
 .nav a{
-    color:#e6e9f2;
-    text-decoration:none;
-    margin-left:15px;
-    font-weight:500;
-    opacity:0.8;
-}
-
-.nav a:hover{
-    opacity:1;
-    color:#6a5cff;
+margin-left:15px;
+color:white;
+text-decoration:none;
 }
 
 /* HERO */
 .hero{
-    padding:80px 20px;
-    text-align:center;
-    background: radial-gradient(circle at top, #1b2a4a, #0b1220);
+height:500px;
+background:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero-overlay{
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:15px;
 }
 
 .hero h1{
-    font-size:44px;
-    margin:0;
-    font-weight:700;
+font-size:45px;
 }
 
-.hero p{
-    opacity:0.7;
-    margin-top:10px;
-}
-
-/* CONTAINER */
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:30px;
-}
-
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-/* CARDS */
-.card{
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding:20px;
-    border-radius:16px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transition:0.3s ease;
-}
-
-.card:hover{
-    transform: translateY(-6px);
-    background: rgba(255,255,255,0.1);
-}
-
-/* INPUTS */
-input, textarea{
-    width:100%;
-    padding:12px;
-    margin-top:8px;
-    margin-bottom:10px;
-    border-radius:10px;
-    border:1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.05);
-    color:white;
-}
-
-input::placeholder, textarea::placeholder{
-    color: rgba(255,255,255,0.5);
-}
-
-/* BUTTON */
 button{
-    background: linear-gradient(135deg,#4f8cff,#6a5cff,#ff4fd8);
-    color:white;
-    padding:12px 16px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:600;
-    transition:0.3s;
+background:linear-gradient(135deg,#6a5cff,#ff4fd8);
+border:none;
+padding:12px 20px;
+color:white;
+border-radius:10px;
+margin-top:10px;
 }
 
-button:hover{
-    transform: scale(1.05);
+/* SECTIONS */
+.section{
+padding:50px 20px;
+max-width:1100px;
+margin:auto;
 }
 
-/* FOOTER */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:12px;
+}
+
+/* IMAGE BLOCK */
+.image{
+width:100%;
+border-radius:12px;
+margin-top:15px;
+}
+
 footer{
-    text-align:center;
-    padding:30px;
-    color:rgba(255,255,255,0.5);
-    margin-top:50px;
+text-align:center;
+padding:30px;
+color:#aaa;
 }
 </style>
 
@@ -141,11 +98,8 @@ footer{
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
-
-<div class="logo">EUNIQ RECRUITMENT OS</div>
-
+<div>EUNIQ</div>
 <div class="nav">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -153,61 +107,44 @@ footer{
 <a href="jobs.html">Jobs</a>
 <a href="contact.html">Contact</a>
 </div>
-
 </div>
 
 <!-- HERO -->
 <div class="hero">
-<h1>Hire Smarter. Faster. Globally.</h1>
-<p>AI-powered recruitment SaaS for modern companies</p>
+<div class="hero-overlay">
+<h1>Hire Top Talent Globally</h1>
+<p>We connect companies with world-class professionals</p>
+<button>Get Started</button>
+</div>
 </div>
 
-<!-- MAIN -->
-<div class="container">
-
-<h2>Dashboard Overview</h2>
+<!-- SERVICES PREVIEW -->
+<div class="section">
+<h2>What We Do</h2>
 
 <div class="grid">
-
 <div class="card">
-<h3>📊 Candidates</h3>
-<p>Track applicants in real time (backend next step)</p>
-</div>
-
-<div class="card">
-<h3>💼 Jobs</h3>
-<p>Post and manage global job listings</p>
+<h3>Recruitment</h3>
+<p>We find the best candidates for your business.</p>
+<img class="image" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df">
 </div>
 
 <div class="card">
-<h3>🌍 Global Hiring</h3>
-<p>Recruit talent from any country</p>
-</div>
-
-</div>
-
-<h2>Quick Actions</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Post Job</h3>
-<p>Create new job listing</p>
-<button onclick="alert('Next: connect database')">Publish Job</button>
+<h3>Global Hiring</h3>
+<p>Access talent from anywhere in the world.</p>
+<img class="image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
 </div>
 
 <div class="card">
-<h3>Applications</h3>
-<p>View candidate submissions</p>
-<button onclick="alert('Next: backend system')">View Applicants</button>
+<h3>HR Solutions</h3>
+<p>We handle your recruitment process end-to-end.</p>
+<img class="image" src="https://images.unsplash.com/photo-1556761175-b413da4baf72">
 </div>
-
 </div>
-
 </div>
 
 <footer>
-© 2026 Euniq Corporate Services | Recruitment SaaS Platform
+© 2026 Euniq Corporate Services
 </footer>
 
 </body>
