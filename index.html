@@ -11,6 +11,124 @@
 <style>
 body{
     margin:0;
+    font-family: 'Inter', sans-serif;
+    background: #0b1220;
+    color: #e6e9f2;
+}
+
+/* HERO */
+.hero{
+    padding:70px 20px;
+    text-align:center;
+    background: radial-gradient(circle at top, #1b2a4a, #0b1220);
+}
+
+.hero h1{
+    font-size:42px;
+    margin:0;
+    font-weight:700;
+}
+
+.hero p{
+    opacity:0.7;
+    margin-top:10px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+/* SECTION TITLE */
+h2{
+    margin-top:50px;
+    font-size:22px;
+    color:#ffffff;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* GLASS CARDS (IMPORTANT UPGRADE) */
+.card{
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding:20px;
+    border-radius:16px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.09);
+}
+
+/* INPUTS */
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    margin-bottom:10px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    color:white;
+    outline:none;
+}
+
+input::placeholder, textarea::placeholder{
+    color: rgba(255,255,255,0.5);
+}
+
+/* BUTTON */
+button{
+    background: linear-gradient(135deg,#4f8cff,#6a5cff);
+    color:white;
+    padding:12px 16px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+button:hover{
+    transform: scale(1.03);
+}
+
+/* TOP BAR */
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:#0a0f1c;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.logo{
+    font-weight:700;
+    color:white;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    color:rgba(255,255,255,0.5);
+    margin-top:50px;
+}
+</style>
+body{
+    margin:0;
     font-family:Inter, sans-serif;
     background:#f5f7fb;
     color:#111;
