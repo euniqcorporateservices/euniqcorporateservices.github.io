@@ -10,18 +10,19 @@
 
 <style>
 :root{
---primary:#4f6cff;
+--primary:#5b6cff;
 --accent:#9b5cff;
---bg:#070b16;
+--bg:#060a14;
 --card:#0f172a;
---text:#e8ecff;
---muted:#aab2ff;
+--text:#eaf0ff;
+--muted:#a7b0d6;
 }
 
+/* GLOBAL */
 body{
 margin:0;
 font-family:Inter;
-background:var(--bg);
+background:radial-gradient(circle at top, #0b1430, #060a14);
 color:var(--text);
 overflow-x:hidden;
 }
@@ -31,43 +32,53 @@ overflow-x:hidden;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:16px 40px;
+padding:14px 35px;
 position:fixed;
 width:100%;
-background:rgba(7,11,22,0.92);
-backdrop-filter:blur(12px);
+background:rgba(10,15,30,0.6);
+backdrop-filter:blur(14px);
 z-index:100;
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 .logo{
 font-weight:700;
 font-size:15px;
+letter-spacing:0.5px;
 }
 
 /* NAV */
 .nav{
 display:flex;
-gap:20px;
+gap:18px;
 }
 
 .nav a{
 color:var(--muted);
 text-decoration:none;
 font-size:14px;
+transition:0.3s;
 }
 
-.nav a:hover{color:white;}
+.nav a:hover{
+color:white;
+}
 
 /* HAMBURGER */
 .menu-toggle{
 display:none;
 font-size:26px;
 cursor:pointer;
+margin-left:10px;
 color:white;
 }
 
-/* MOBILE NAV DROPDOWN */
+/* MOBILE NAV - DROPDOWN */
 @media(max-width:768px){
+
+.topbar{
+padding:14px 20px;
+}
 
 .menu-toggle{
 display:block;
@@ -78,11 +89,11 @@ display:none;
 flex-direction:column;
 position:absolute;
 top:60px;
-right:20px;
-background:#0b1220;
-padding:15px;
+right:15px;
+background:rgba(15,23,42,0.95);
+padding:14px;
 border-radius:12px;
-width:200px;
+width:210px;
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
@@ -93,7 +104,7 @@ display:flex;
 
 /* HERO */
 .hero{
-height:75vh;
+height:78vh;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -107,18 +118,19 @@ content:"";
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(7,11,22,0.75);
+background:linear-gradient(to bottom, rgba(6,10,20,0.6), rgba(6,10,20,0.95));
 }
 
 .hero-content{
 position:relative;
 z-index:10;
-max-width:750px;
+max-width:780px;
 padding:20px;
 }
 
 .hero h1{
 font-size:clamp(34px,5vw,58px);
+margin-bottom:10px;
 }
 
 .hero p{
@@ -129,32 +141,33 @@ color:var(--muted);
 .btn{
 padding:12px 20px;
 border:none;
-border-radius:10px;
+border-radius:12px;
 cursor:pointer;
 font-weight:600;
 margin:6px;
+transition:0.3s;
 }
 
 .btn-primary{
 background:linear-gradient(135deg,var(--primary),var(--accent));
 color:white;
+box-shadow:0 10px 25px rgba(91,108,255,0.25);
 }
 
-.btn-outline{
-background:transparent;
-border:1px solid var(--muted);
-color:white;
+.btn-primary:hover{
+transform:translateY(-2px);
 }
 
-/* SECTION */
+/* SECTIONS */
 .section{
-padding:70px 40px;
+padding:70px 35px;
 max-width:1100px;
 margin:auto;
 }
 
 .section h2{
 margin-bottom:30px;
+font-size:24px;
 }
 
 /* GRID */
@@ -164,83 +177,52 @@ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:20px;
 }
 
-/* CARDS */
+/* CARD STYLE */
 .card{
-background:var(--card);
-border-radius:14px;
+background:rgba(15,23,42,0.7);
+backdrop-filter:blur(10px);
+border-radius:16px;
 overflow:hidden;
-padding:15px;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 15px 35px rgba(0,0,0,0.3);
 }
 
 /* INDUSTRY */
-.industry{
-text-align:center;
-background:var(--card);
-border-radius:14px;
-overflow:hidden;
-}
-
-.industry img{
-width:100%;
-height:150px;
-object-fit:cover;
-}
-
-/* JOB */
-.job{
-background:var(--card);
-border-radius:14px;
-overflow:hidden;
-border-left:3px solid var(--primary);
-}
-
-.job img{
-width:100%;
-height:150px;
-object-fit:cover;
-}
-
-/* BENEFITS */
-.benefit{
-background:var(--card);
-border-radius:14px;
-overflow:hidden;
-}
-
+.industry img,
+.job img,
 .benefit img{
 width:100%;
 height:150px;
 object-fit:cover;
+display:block;
 }
 
-/* TESTIMONIAL */
-.testimonial{
-text-align:center;
-background:var(--card);
-padding:20px;
-border-radius:14px;
-}
-
-.testimonial img{
-width:60px;
-height:60px;
-border-radius:50%;
-margin-bottom:10px;
+.industry b,
+.job b,
+.benefit b{
+display:block;
+padding:12px;
 }
 
 /* FOOTER */
 footer{
-background:#050914;
+background:#050814;
 padding:40px 20px;
 text-align:center;
 margin-top:60px;
+border-top:1px solid rgba(255,255,255,0.05);
 }
 
 .footer-nav{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-gap:20px;
+gap:18px;
 margin-bottom:15px;
 }
 
@@ -250,12 +232,8 @@ text-decoration:none;
 font-size:13px;
 }
 
-.footer-nav a:hover{color:white;}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-.section{padding:50px 20px;}
-.hero{height:65vh;}
+.footer-nav a:hover{
+color:white;
 }
 </style>
 
@@ -265,9 +243,12 @@ font-size:13px;
 
 <!-- HEADER -->
 <div class="topbar">
+
 <div class="logo">Euniq Corporate Services</div>
 
+<div style="display:flex;align-items:center;">
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</div>
 
 <div class="nav" id="navMenu">
 <a href="#">Home</a>
@@ -276,16 +257,17 @@ font-size:13px;
 <a href="#">Jobs</a>
 <a href="#">Contact</a>
 </div>
+
 </div>
 
 <!-- HERO -->
 <div class="hero">
 <div class="hero-content">
-<h1>Hire Top Global Talent Faster</h1>
-<p>We connect companies with pre-vetted professionals worldwide</p>
+<h1>Elite Recruitment for Global Companies</h1>
+<p>We connect businesses with world-class professionals across industries</p>
 
 <button class="btn btn-primary">Hire Talent</button>
-<button class="btn btn-outline">Get a Job</button>
+<button class="btn">Get a Job</button>
 </div>
 </div>
 
@@ -295,25 +277,36 @@ font-size:13px;
 
 <div class="grid">
 
-<div class="industry">
+<div class="card industry">
 <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
 <b>Tech</b>
 </div>
 
-<div class="industry">
+<div class="card industry">
 <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0">
 <b>Engineering</b>
 </div>
 
-<!-- FIXED HEALTHCARE IMAGE -->
-<div class="industry">
+<div class="card industry">
 <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
 <b>Healthcare</b>
 </div>
 
-<div class="industry">
+<div class="card industry">
 <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f">
 <b>Finance</b>
+</div>
+
+<!-- NEW INDUSTRY -->
+<div class="card industry">
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+<b>Education</b>
+</div>
+
+<!-- NEW INDUSTRY -->
+<div class="card industry">
+<img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789">
+<b>Oil & Gas</b>
 </div>
 
 </div>
@@ -325,22 +318,19 @@ font-size:13px;
 
 <div class="grid">
 
-<div class="job">
+<div class="card job">
 <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
 <b>Accounting Manager</b>
-<p>Draper, UT</p>
 </div>
 
-<div class="job">
+<div class="card job">
 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
 <b>Software Engineer</b>
-<p>Remote Global</p>
 </div>
 
-<div class="job">
+<div class="card job">
 <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72">
 <b>HR Specialist</b>
-<p>Lagos / Remote</p>
 </div>
 
 </div>
@@ -352,22 +342,19 @@ font-size:13px;
 
 <div class="grid">
 
-<div class="benefit">
+<div class="card benefit">
 <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df">
 <b>Faster Hiring</b>
-<p>Reduce hiring time with pre-screened candidates.</p>
 </div>
 
-<div class="benefit">
+<div class="card benefit">
 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
 <b>Global Access</b>
-<p>Access talent worldwide instantly.</p>
 </div>
 
-<div class="benefit">
+<div class="card benefit">
 <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72">
-<b>Quality Candidates</b>
-<p>Only verified professionals are shortlisted.</p>
+<b>Quality Talent</b>
 </div>
 
 </div>
