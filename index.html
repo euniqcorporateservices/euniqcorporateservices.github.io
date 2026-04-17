@@ -33,20 +33,54 @@ body{
 
 /* HERO */
 .hero{
-    padding:70px 20px;
-    text-align:center;
-    background: radial-gradient(circle at top, #1b2a4a, #0b1220);
+    position:relative;
+    height:420px;
+    overflow:hidden;
 }
 
-.hero h1{
+/* SLIDER */
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:1s ease-in-out;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+/* HERO TEXT */
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:10;
+}
+
+.hero-text h1{
     font-size:42px;
     margin:0;
-    font-weight:700;
+    color:white;
+    text-shadow:0 5px 20px rgba(0,0,0,0.6);
 }
 
-.hero p{
-    opacity:0.7;
-    margin-top:10px;
+.hero-text p{
+    opacity:0.9;
+}
+
+/* OVERLAY */
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg, rgba(11,18,32,0.7), rgba(10,15,28,0.4));
+    z-index:5;
 }
 
 /* CONTAINER */
@@ -56,12 +90,6 @@ body{
     padding:30px;
 }
 
-/* HEADINGS */
-h2{
-    margin-top:50px;
-    font-size:22px;
-}
-
 /* GRID */
 .grid{
     display:grid;
@@ -69,7 +97,7 @@ h2{
     gap:20px;
 }
 
-/* GLASS CARD */
+/* CARDS */
 .card{
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.08);
@@ -82,7 +110,7 @@ h2{
 
 .card:hover{
     transform: translateY(-6px);
-    background: rgba(255,255,255,0.09);
+    background: rgba(255,255,255,0.1);
 }
 
 /* INPUTS */
@@ -95,7 +123,6 @@ input, textarea{
     border:1px solid rgba(255,255,255,0.15);
     background: rgba(255,255,255,0.05);
     color:white;
-    outline:none;
 }
 
 input::placeholder, textarea::placeholder{
@@ -104,7 +131,7 @@ input::placeholder, textarea::placeholder{
 
 /* BUTTON */
 button{
-    background: linear-gradient(135deg,#4f8cff,#6a5cff);
+    background: linear-gradient(135deg,#4f8cff,#ff4fd8,#6a5cff);
     color:white;
     padding:12px 16px;
     border:none;
@@ -115,7 +142,7 @@ button{
 }
 
 button:hover{
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -133,12 +160,25 @@ footer{
 
 <div class="topbar">
 <div class="logo">EUNIQ RECRUITMENT OS</div>
-<div>Global SaaS Platform</div>
+<div>Global AI Hiring Platform</div>
 </div>
 
+<!-- HERO SLIDER -->
 <div class="hero">
+
+<div class="overlay"></div>
+
+<div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d');"></div>
+
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');"></div>
+
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c');"></div>
+
+<div class="hero-text">
 <h1>Hire Smarter. Faster. Globally.</h1>
-<p>Modern recruitment SaaS system for companies and recruiters</p>
+<p>AI-powered recruitment SaaS for modern companies</p>
+</div>
+
 </div>
 
 <div class="container">
@@ -149,17 +189,17 @@ footer{
 
 <div class="card">
 <h3>📊 Candidates</h3>
-<p>Live tracking coming next step</p>
+<p>Track applicants in real time</p>
 </div>
 
 <div class="card">
 <h3>💼 Jobs</h3>
-<p>Post and manage job listings globally</p>
+<p>Global job posting system</p>
 </div>
 
 <div class="card">
 <h3>🌍 Global Hiring</h3>
-<p>Remote + international recruitment ready</p>
+<p>Hire talent from anywhere</p>
 </div>
 
 </div>
@@ -171,7 +211,7 @@ footer{
 <input placeholder="Location (Remote / Country)">
 <textarea placeholder="Job Description"></textarea>
 
-<button onclick="alert('Next step: connect backend')">
+<button onclick="alert('Next: backend connection')">
 Publish Job
 </button>
 </div>
@@ -185,7 +225,7 @@ Publish Job
 <input placeholder="Role Applied For">
 <textarea placeholder="Experience"></textarea>
 
-<button onclick="alert('Next step: database connection')">
+<button onclick="alert('Next: database connection')">
 Submit Application
 </button>
 </div>
@@ -195,6 +235,17 @@ Submit Application
 <footer>
 © 2026 Euniq Corporate Services | Recruitment SaaS Platform
 </footer>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+setInterval(() => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+}, 4000);
+</script>
 
 </body>
 </html>
