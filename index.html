@@ -6,12 +6,12 @@
 
 <title>Euniq Corporate Services</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
---primary:#5b5cff;
---accent:#9f5cff;
+--primary:#4f6cff;
+--accent:#9b5cff;
 --bg:#070b16;
 --card:#0f172a;
 --text:#e8ecff;
@@ -21,8 +21,9 @@
 body{
 margin:0;
 font-family:Inter;
-background:linear-gradient(180deg,#070b16,#0b1220);
+background:var(--bg);
 color:var(--text);
+overflow-x:hidden;
 }
 
 /* NAV */
@@ -45,21 +46,17 @@ font-size:15px;
 
 .nav{
 display:flex;
-gap:22px;
+gap:20px;
 }
 
 .nav a{
-text-decoration:none;
 color:var(--muted);
+text-decoration:none;
 font-size:14px;
-transition:0.3s;
 }
 
-.nav a:hover{
-color:white;
-}
+.nav a:hover{color:white;}
 
-/* MOBILE */
 .menu-toggle{
 display:none;
 font-size:22px;
@@ -82,9 +79,9 @@ border-radius:10px;
 .menu-toggle{display:block;}
 }
 
-/* HERO */
+/* HERO (SMALLER + BOLDER) */
 .hero{
-height:90vh;
+height:75vh;
 position:relative;
 display:flex;
 align-items:center;
@@ -101,32 +98,34 @@ background-size:cover;
 background-position:center;
 opacity:0;
 transition:1.2s;
+transform:scale(1.1);
 }
 
-.slide.active{opacity:1;}
+.slide.active{
+opacity:1;
+transform:scale(1);
+}
 
 .overlay{
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(rgba(7,11,22,0.7), rgba(7,11,22,0.9));
+background:linear-gradient(rgba(7,11,22,0.75), rgba(7,11,22,0.95));
 }
 
 .hero-content{
 position:relative;
 z-index:10;
-max-width:800px;
+max-width:750px;
 padding:20px;
 }
 
 .hero h1{
-font-size:clamp(36px,5vw,62px);
-margin:0;
+font-size:clamp(32px,5vw,56px);
 }
 
 .hero p{
 color:var(--muted);
-margin-top:15px;
 }
 
 /* BUTTONS */
@@ -136,7 +135,7 @@ border-radius:10px;
 border:none;
 cursor:pointer;
 font-weight:600;
-margin:8px;
+margin:6px;
 }
 
 .btn-primary{
@@ -144,13 +143,7 @@ background:linear-gradient(135deg,var(--primary),var(--accent));
 color:white;
 }
 
-.btn-outline{
-background:transparent;
-border:1px solid var(--muted);
-color:white;
-}
-
-/* SECTION */
+/* SECTIONS */
 .section{
 padding:70px 40px;
 max-width:1100px;
@@ -168,55 +161,56 @@ grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:20px;
 }
 
-/* CARD */
+/* CARDS */
 .card{
 background:var(--card);
 padding:20px;
 border-radius:14px;
-transition:0.3s;
+transition:0.4s;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .card:hover{
 transform:translateY(-6px);
 }
 
-/* INDUSTRIES */
+/* JOB CARDS */
+.job{
+background:var(--card);
+padding:20px;
+border-radius:14px;
+border-left:3px solid var(--primary);
+}
+
+/* INDUSTRY */
 .industry{
 text-align:center;
 padding:20px;
 background:var(--card);
 border-radius:14px;
+font-size:14px;
 }
 
-.industry span{
-font-size:28px;
-display:block;
-margin-bottom:10px;
-}
-
-/* BENEFITS */
-.benefit{
-display:flex;
-gap:15px;
-align-items:flex-start;
-background:var(--card);
-padding:20px;
-border-radius:14px;
-}
-
-.benefit img{
-width:70px;
-height:70px;
-border-radius:10px;
-object-fit:cover;
-}
-
-/* TESTIMONIALS */
+/* TESTIMONIAL */
 .testimonial{
+text-align:center;
 background:var(--card);
 padding:20px;
 border-radius:14px;
-text-align:center;
+opacity:0;
+transform:translateY(40px);
+}
+
+.testimonial.show{
+opacity:1;
+transform:translateY(0);
+transition:0.6s;
 }
 
 .testimonial img{
@@ -230,36 +224,15 @@ margin-bottom:10px;
 footer{
 background:#050914;
 padding:40px 20px;
+text-align:center;
 margin-top:60px;
 }
 
-.footer-top{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-bottom:20px;
-}
-
-.footer-top a{
-color:var(--muted);
-text-decoration:none;
-font-size:13px;
-}
-
-.footer-top a:hover{
-color:white;
-}
-
-.footer-bottom{
-text-align:center;
-font-size:12px;
-opacity:0.6;
-}
-
-/* RESPONSIVE */
+/* MOBILE */
 @media(max-width:768px){
+.topbar{padding:15px 20px;}
 .section{padding:50px 20px;}
+.hero{height:65vh;}
 }
 </style>
 
@@ -291,11 +264,9 @@ opacity:0.6;
 <div class="overlay"></div>
 
 <div class="hero-content">
-<h1>We Connect You With Top Global Talent</h1>
-<p>Recruit smarter. Hire faster. Scale globally with confidence.</p>
-
+<h1>Hire Top Global Talent Faster</h1>
+<p>Recruit smarter with pre-vetted professionals worldwide</p>
 <button class="btn btn-primary">Hire Talent</button>
-<button class="btn btn-outline">Find Jobs</button>
 </div>
 
 </div>
@@ -305,46 +276,48 @@ opacity:0.6;
 <h2>Industries We Recruit For</h2>
 
 <div class="grid">
+<div class="industry">💻 Tech</div>
+<div class="industry">⚙️ Engineering</div>
+<div class="industry">🏥 Healthcare</div>
+<div class="industry">📊 Finance</div>
+<div class="industry">🏢 Corporate</div>
+<div class="industry">📡 Telecom</div>
+</div>
+</div>
 
-<div class="industry"><span>💻</span>Tech</div>
-<div class="industry"><span>⚙️</span>Engineering</div>
-<div class="industry"><span>🏥</span>Healthcare</div>
-<div class="industry"><span>📊</span>Finance & Accounting</div>
-<div class="industry"><span>🏢</span>Business Services</div>
-<div class="industry"><span>📡</span>Telecom</div>
+<!-- JOBS -->
+<div class="section">
+<h2>Latest Job Openings</h2>
+
+<div class="grid">
+
+<div class="job">
+<b>Accounting Manager</b>
+<p>Draper, UT (Hybrid)</p>
+</div>
+
+<div class="job">
+<b>HR Specialist</b>
+<p>Remote – Global</p>
+</div>
+
+<div class="job">
+<b>Software Engineer</b>
+<p>Lagos / Remote</p>
+</div>
 
 </div>
 </div>
 
 <!-- BENEFITS -->
 <div class="section">
-<h2>Why Use Our Recruitment Agency</h2>
+<h2>Why Companies Choose Us</h2>
 
 <div class="grid">
 
-<div class="benefit">
-<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
-<div>
-<b>Faster Hiring</b>
-<p>We reduce hiring time with pre-screened candidates.</p>
-</div>
-</div>
-
-<div class="benefit">
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-<div>
-<b>Global Talent Access</b>
-<p>Hire professionals from anywhere in the world.</p>
-</div>
-</div>
-
-<div class="benefit">
-<img src="https://images.unsplash.com/photo-1556761175-b413da4baf72">
-<div>
-<b>Better Quality Candidates</b>
-<p>Only verified and skilled professionals.</p>
-</div>
-</div>
+<div class="card">✔ Faster hiring process</div>
+<div class="card">✔ Global talent access</div>
+<div class="card">✔ Pre-screened candidates</div>
 
 </div>
 </div>
@@ -357,17 +330,17 @@ opacity:0.6;
 
 <div class="testimonial">
 <img src="https://randomuser.me/api/portraits/women/44.jpg">
-<p>“Amazing hiring experience.”</p>
+<p>"Best recruitment agency we’ve worked with."</p>
 </div>
 
 <div class="testimonial">
 <img src="https://randomuser.me/api/portraits/men/32.jpg">
-<p>“Very fast recruitment process.”</p>
+<p>"Fast and reliable talent sourcing."</p>
 </div>
 
 <div class="testimonial">
 <img src="https://randomuser.me/api/portraits/women/68.jpg">
-<p>“Highly professional team.”</p>
+<p>"Highly professional service."</p>
 </div>
 
 </div>
@@ -375,19 +348,7 @@ opacity:0.6;
 
 <!-- FOOTER -->
 <footer>
-
-<div class="footer-top">
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Jobs</a>
-<a href="#">Contact</a>
-</div>
-
-<div class="footer-bottom">
 © 2026 Euniq Corporate Services
-</div>
-
 </footer>
 
 <script>
@@ -395,6 +356,7 @@ function toggleMenu(){
 document.getElementById("navMenu").classList.toggle("show");
 }
 
+/* SLIDER */
 let slides = document.querySelectorAll('.slide');
 let index = 0;
 
@@ -402,7 +364,19 @@ setInterval(()=>{
 slides[index].classList.remove('active');
 index = (index + 1) % slides.length;
 slides[index].classList.add('active');
-},5000);
+},4000);
+
+/* SCROLL ANIMATION */
+const cards = document.querySelectorAll('.card, .testimonial');
+
+window.addEventListener('scroll',()=>{
+cards.forEach(c=>{
+let top = c.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+c.classList.add('show');
+}
+});
+});
 </script>
 
 </body>
