@@ -3,166 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Euniq Recruitment SaaS</title>
+
+<title>Euniq Recruitment OS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body{
     margin:0;
-    font-family:Segoe UI;
-    background:#f4f6f9;
+    font-family:Inter, sans-serif;
+    background:#f5f7fb;
+    color:#111;
 }
 
-/* HEADER */
-header{
+/* TOP BAR */
+.topbar{
     background:#0a1f44;
     color:white;
     padding:20px;
-    text-align:center;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-/* NAV */
-nav{
-    background:white;
-    padding:10px;
-    text-align:center;
-}
-nav a{
-    margin:10px;
-    text-decoration:none;
-    color:#0a1f44;
-    font-weight:600;
+.logo{
+    font-size:18px;
+    font-weight:700;
 }
 
-/* LAYOUT */
+/* HERO */
+.hero{
+    padding:60px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#0a1f44,#1c3d7a);
+    color:white;
+}
+
+.hero h1{
+    font-size:40px;
+    margin:0;
+}
+
+.hero p{
+    opacity:0.8;
+}
+
+/* GRID */
 .container{
     max-width:1100px;
     margin:auto;
-    padding:20px;
+    padding:30px;
 }
 
-/* CARDS */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+    gap:20px;
 }
 
+/* CARDS */
 .card{
     background:white;
     padding:20px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    transition:0.3s;
 }
 
-/* FORM */
-input, textarea{
-    width:100%;
-    padding:10px;
-    margin-top:8px;
-    margin-bottom:10px;
+.card:hover{
+    transform:translateY(-5px);
 }
 
 /* BUTTON */
 button{
-    padding:10px 15px;
     background:#0a1f44;
     color:white;
+    padding:12px 15px;
     border:none;
-    border-radius:6px;
+    border-radius:10px;
     cursor:pointer;
+    margin-top:10px;
 }
 
-/* FOOTER */
+/* SECTION TITLE */
+h2{
+    margin-top:40px;
+}
+
+/* INPUT */
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    margin-bottom:10px;
+    border-radius:8px;
+    border:1px solid #ddd;
+    outline:none;
+}
+
 footer{
-    background:#0a1f44;
-    color:white;
     text-align:center;
-    padding:20px;
-    margin-top:30px;
+    padding:30px;
+    margin-top:40px;
+    color:#666;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h2>Euniq Recruitment SaaS Platform</h2>
-<p>Hire Talent Globally | Manage Candidates | Post Jobs</p>
-</header>
+<div class="topbar">
+<div class="logo">EUNIQ RECRUITMENT OS</div>
+<div>Global HR SaaS Platform</div>
+</div>
 
-<nav>
-<a href="#dashboard">Dashboard</a>
-<a href="#jobs">Jobs</a>
-<a href="#apply">Apply</a>
-<a href="#contact">Contact</a>
-</nav>
+<div class="hero">
+<h1>Hire Smarter. Faster. Globally.</h1>
+<p>AI-ready recruitment system for modern companies</p>
+</div>
 
 <div class="container">
 
 <!-- DASHBOARD -->
-<section id="dashboard" class="card">
-<h2>Dashboard</h2>
-<p>Welcome to your recruitment SaaS system.</p>
+<h2>Dashboard Overview</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>📊 Candidates</h3>
-<p>0 (will connect to database)</p>
+<p>Track all applicants in real-time</p>
 </div>
 
 <div class="card">
 <h3>💼 Jobs</h3>
-<p>0 active jobs</p>
+<p>Post and manage job listings globally</p>
 </div>
 
 <div class="card">
 <h3>🌍 Global Reach</h3>
-<p>Ready for international hiring</p>
+<p>Hire talent from any country</p>
 </div>
 
 </div>
-</section>
 
 <!-- JOBS -->
-<section id="jobs" class="card">
 <h2>Post a Job</h2>
 
+<div class="card">
 <input placeholder="Job Title">
 <input placeholder="Location (Remote / Country)">
 <textarea placeholder="Job Description"></textarea>
-
-<button onclick="alert('Next step: connect Supabase')">
-Post Job
+<button onclick="alert('Next: connect database (Supabase)')">
+Publish Job
 </button>
-</section>
+</div>
 
 <!-- APPLY -->
-<section id="apply" class="card">
-<h2>Apply for Jobs</h2>
+<h2>Candidate Application</h2>
 
+<div class="card">
 <input placeholder="Full Name">
 <input placeholder="Email">
 <input placeholder="Phone">
-<input placeholder="Role">
+<input placeholder="Role Applied For">
 <textarea placeholder="Experience"></textarea>
 
-<button onclick="alert('Next step: database connection')">
+<button onclick="alert('Next: database connection')">
 Submit Application
 </button>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="card">
-<h2>Contact</h2>
-<p>Email: info@euniqcorporateservices.com</p>
-<p>WhatsApp: +2349054303209</p>
-</section>
+</div>
 
 </div>
 
 <footer>
-<p>© 2026 Euniq Corporate Services</p>
+© 2026 Euniq Corporate Services | Recruitment SaaS Platform
 </footer>
 
 </body>
