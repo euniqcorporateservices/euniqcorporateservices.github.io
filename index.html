@@ -1,385 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Euniq Corporate Services</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
---primary:#5b6cff;
---accent:#9b5cff;
---bg:#060a14;
---card:#0f172a;
---text:#eaf0ff;
---muted:#a7b0d6;
-}
-
-/* GLOBAL */
-body{
-margin:0;
-font-family:Inter;
-background:radial-gradient(circle at top, #0b1430, #060a14);
-color:var(--text);
-overflow-x:hidden;
-}
-
-/* HEADER */
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:14px 35px;
-position:fixed;
-width:100%;
-background:rgba(10,15,30,0.6);
-backdrop-filter:blur(14px);
-z-index:100;
-border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.logo{
-font-weight:700;
-font-size:15px;
-letter-spacing:0.5px;
-}
-
-/* NAV */
-.nav{
-display:flex;
-gap:18px;
-}
-
-.nav a{
-color:var(--muted);
-text-decoration:none;
-font-size:14px;
-transition:0.3s;
-}
-
-.nav a:hover{
-color:white;
-}
-
-/* HAMBURGER */
-.menu-toggle{
-display:none;
-font-size:26px;
-cursor:pointer;
-margin-left:10px;
-color:white;
-}
-
-/* MOBILE NAV - DROPDOWN */
-@media(max-width:768px){
-
-.topbar{
-padding:14px 20px;
-}
-
-.menu-toggle{
-display:block;
-}
-
-.nav{
-display:none;
-flex-direction:column;
-position:absolute;
-top:60px;
-right:15px;
-background:rgba(15,23,42,0.95);
-padding:14px;
-border-radius:12px;
-width:210px;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
-
-.nav.show{
-display:flex;
-}
-}
-
-/* HERO */
-.hero{
-height:78vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover;
-position:relative;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(to bottom, rgba(6,10,20,0.6), rgba(6,10,20,0.95));
-}
-
-.hero-content{
-position:relative;
-z-index:10;
-max-width:780px;
-padding:20px;
-}
-
-.hero h1{
-font-size:clamp(34px,5vw,58px);
-margin-bottom:10px;
-}
-
-.hero p{
-color:var(--muted);
-}
-
-/* BUTTONS */
-.btn{
-padding:12px 20px;
-border:none;
-border-radius:12px;
-cursor:pointer;
-font-weight:600;
-margin:6px;
-transition:0.3s;
-}
-
-.btn-primary{
-background:linear-gradient(135deg,var(--primary),var(--accent));
-color:white;
-box-shadow:0 10px 25px rgba(91,108,255,0.25);
-}
-
-.btn-primary:hover{
-transform:translateY(-2px);
-}
-
-/* SECTIONS */
-.section{
-padding:70px 35px;
-max-width:1100px;
-margin:auto;
-}
-
-.section h2{
-margin-bottom:30px;
-font-size:24px;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-}
-
-/* CARD STYLE */
-.card{
-background:rgba(15,23,42,0.7);
-backdrop-filter:blur(10px);
-border-radius:16px;
-overflow:hidden;
-transition:0.3s;
-border:1px solid rgba(255,255,255,0.05);
-}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 15px 35px rgba(0,0,0,0.3);
-}
-
-/* INDUSTRY */
-.industry img,
-.job img,
-.benefit img{
-width:100%;
-height:150px;
-object-fit:cover;
-display:block;
-}
-
-.industry b,
-.job b,
-.benefit b{
-display:block;
-padding:12px;
-}
-
-/* FOOTER */
-footer{
-background:#050814;
-padding:40px 20px;
-text-align:center;
-margin-top:60px;
-border-top:1px solid rgba(255,255,255,0.05);
-}
-
-.footer-nav{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:18px;
-margin-bottom:15px;
-}
-
-.footer-nav a{
-color:var(--muted);
-text-decoration:none;
-font-size:13px;
-}
-
-.footer-nav a:hover{
-color:white;
-}
-</style>
-
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="topbar">
-
 <div class="logo">Euniq Corporate Services</div>
 
-<div style="display:flex;align-items:center;">
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav" id="nav">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="jobs.html">Jobs</a>
+<a href="contact.html">Contact</a>
+</div>
 </div>
 
-<div class="nav" id="navMenu">
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Jobs</a>
-<a href="#">Contact</a>
-</div>
-
-</div>
-
-<!-- HERO -->
-<div class="hero">
+<div class="hero" style="background:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover;">
 <div class="hero-content">
-<h1>Elite Recruitment for Global Companies</h1>
-<p>We connect businesses with world-class professionals across industries</p>
-
-<button class="btn btn-primary">Hire Talent</button>
-<button class="btn">Get a Job</button>
+<h1>Hire Global Talent Faster</h1>
+<p>Elite recruitment for companies worldwide</p>
 </div>
 </div>
 
-<!-- INDUSTRIES -->
 <div class="section">
-<h2>Industries We Recruit For</h2>
-
+<h2>Industries</h2>
 <div class="grid">
-
-<div class="card industry">
-<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
-<b>Tech</b>
-</div>
-
-<div class="card industry">
-<img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0">
-<b>Engineering</b>
-</div>
-
-<div class="card industry">
-<img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
-<b>Healthcare</b>
-</div>
-
-<div class="card industry">
-<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f">
-<b>Finance</b>
-</div>
-
-<!-- NEW INDUSTRY -->
-<div class="card industry">
-<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
-<b>Education</b>
-</div>
-
-<!-- NEW INDUSTRY -->
-<div class="card industry">
-<img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789">
-<b>Oil & Gas</b>
-</div>
-
+<div class="card">Tech</div>
+<div class="card">Engineering</div>
+<div class="card">Healthcare</div>
+<div class="card">Finance</div>
 </div>
 </div>
 
-<!-- JOBS -->
-<div class="section">
-<h2>Latest Job Openings</h2>
-
-<div class="grid">
-
-<div class="card job">
-<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
-<b>Accounting Manager</b>
-</div>
-
-<div class="card job">
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-<b>Software Engineer</b>
-</div>
-
-<div class="card job">
-<img src="https://images.unsplash.com/photo-1556761175-b413da4baf72">
-<b>HR Specialist</b>
-</div>
-
-</div>
-</div>
-
-<!-- BENEFITS -->
-<div class="section">
-<h2>Why Companies Choose Us</h2>
-
-<div class="grid">
-
-<div class="card benefit">
-<img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df">
-<b>Faster Hiring</b>
-</div>
-
-<div class="card benefit">
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-<b>Global Access</b>
-</div>
-
-<div class="card benefit">
-<img src="https://images.unsplash.com/photo-1556761175-b413da4baf72">
-<b>Quality Talent</b>
-</div>
-
-</div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-
-<div class="footer-nav">
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Jobs</a>
-<a href="#">Contact</a>
-</div>
-
-<p style="font-size:12px;opacity:0.6;">© 2026 Euniq Corporate Services</p>
-
-</footer>
-
-<script>
-function toggleMenu(){
-document.getElementById("navMenu").classList.toggle("show");
-}
-</script>
+<footer>© 2026 Euniq Corporate Services</footer>
 
 </body>
 </html>
