@@ -50,7 +50,6 @@
             box-shadow: 0 25px 50px -12px rgb(20 184 166 / 0.3);
         }
         
-        /* Improved mobile form */
         @media (max-width: 640px) {
             .contact-form input,
             .contact-form textarea {
@@ -66,11 +65,21 @@
     <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
         <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center py-5">
-                <!-- Your Exact Logo -->
+                <!-- Your Exact Logo (Direct Link) -->
                 <div class="flex items-center gap-3">
                     <img src="https://i.imgur.com/kZCcLmP.png" 
                          alt="Euniq Corporate Services" 
-                         class="h-12 sm:h-16 w-auto object-contain">
+                         class="h-12 sm:h-16 w-auto object-contain"
+                         onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+                    
+                    <!-- Fallback -->
+                    <div id="logo-fallback" class="hidden items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center text-white text-3xl font-bold">E</div>
+                        <div>
+                            <span class="text-xl sm:text-2xl font-semibold">Euniq</span>
+                            <p class="text-[10px] font-medium text-teal-600 -mt-1 tracking-widest">CORPORATE SERVICES</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Desktop Menu -->
@@ -362,7 +371,7 @@
             e.target.reset();
         }
 
-        console.log("%c✅ Euniq Corporate Services - Premium Elite Version with Your Logo", "color:#14b8a6; font-weight:600");
+        console.log("%c✅ Euniq Corporate Services - Premium Version with Your Logo", "color:#14b8a6; font-weight:600");
     </script>
 </body>
 </html>
