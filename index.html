@@ -49,19 +49,6 @@
             transform: translateY(-8px);
             box-shadow: 0 20px 40px -12px rgb(20 184 166 / 0.25);
         }
-        
-        .logo-glow {
-            filter: drop-shadow(0 0 20px rgb(217 119 6));
-        }
-
-        /* Improved mobile form */
-        @media (max-width: 640px) {
-            .contact-form input,
-            .contact-form textarea {
-                padding: 18px 20px;
-                font-size: 16px;
-            }
-        }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -70,14 +57,14 @@
     <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
         <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center py-4">
-                <!-- Logo -->
+                <!-- Logo (Embedded - No Upload Needed) -->
                 <div class="flex items-center gap-3">
-                    <img src="euniq-logo.png" 
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAK..." 
                          alt="Euniq Corporate Services" 
-                         class="h-11 sm:h-14 w-auto logo-glow object-contain"
-                         onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+                         class="h-11 sm:h-14 w-auto object-contain">
                     
-                    <div id="logo-fallback" class="hidden items-center gap-3">
+                    <!-- Text Fallback -->
+                    <div class="hidden sm:flex items-center gap-3">
                         <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center text-white text-3xl font-bold">E</div>
                         <div>
                             <span class="text-xl sm:text-2xl font-semibold">Euniq</span>
@@ -288,7 +275,6 @@
                     </div>
                 </div>
 
-                <!-- Fixed Contact Form -->
                 <div class="lg:col-span-7 bg-white text-slate-900 rounded-3xl p-6 sm:p-10">
                     <form onsubmit="handleSubmit(event)" class="contact-form space-y-6">
                         <input type="text" placeholder="Full Name" required class="w-full px-6 py-5 rounded-3xl bg-slate-100 focus:outline-none text-base">
@@ -307,7 +293,8 @@
         <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
                 <div class="col-span-2 md:col-span-1">
-                    <img src="euniq-logo.png" alt="Euniq" class="h-12 logo-glow" onerror="this.style.display='none'">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAK..." 
+                         alt="Euniq" class="h-12 object-contain">
                     <p class="mt-6 text-sm">Premium global recruitment firm connecting elite talent with visionary organizations worldwide.</p>
                 </div>
                 <div>
@@ -371,7 +358,7 @@
             e.target.reset();
         }
 
-        console.log("%c✅ Euniq Corporate Services - Complete Version with All Sections", "color:#14b8a6; font-weight:600");
+        console.log("%c✅ Euniq Corporate Services - Logo Embedded - All Sections Complete", "color:#14b8a6; font-weight:600");
     </script>
 </body>
 </html>
