@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Euniq Corporate Services - Global Recruitment Excellence. We work remotely to connect top talent with world-class opportunities.">
-    <title>Euniq Corporate Services | Global Recruitment</title>
+    <meta name="description" content="Euniq Corporate Services - Premium Global Recruitment. Fully remote. We connect top talent with exceptional opportunities worldwide.">
+    <title>Euniq Corporate Services | Global Recruitment Excellence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -16,9 +16,9 @@
         }
         
         * {
-            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity;
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
+            transition-duration: 200ms;
         }
         
         .tail-container * {
@@ -29,8 +29,30 @@
             font-family: 'Playfair Display', sans-serif;
         }
 
-        .hero-bg {
-            background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        /* HERO SLIDER */
+        .hero-slider {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1000ms ease-in-out;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(rgba(10, 37, 64, 0.75), rgba(10, 37, 64, 0.85));
+            position: absolute;
+            inset: 0;
         }
 
         .nav-link {
@@ -52,12 +74,12 @@
         }
 
         .job-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .job-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            transform: translateY(-8px);
+            box-shadow: 25px 25px 50px -12px rgb(212 175 119 / 0.15);
         }
 
         .section-header {
@@ -67,29 +89,38 @@
         .section-header:after {
             content: '';
             position: absolute;
-            width: 60px;
-            height: 3px;
+            width: 80px;
+            height: 4px;
             background: linear-gradient(to right, #d4af77, #0a2540);
-            bottom: -8px;
+            bottom: -10px;
             left: 0;
+        }
+
+        /* Enhanced responsiveness */
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.75rem !important;
+                line-height: 1.1 !important;
+            }
         }
     </style>
 </head>
 <body class="tail-container">
-    <!-- NAVBAR -->
-    <nav class="bg-[#0a2540] text-white sticky top-0 z-50 shadow-lg">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+    <!-- NAVBAR - Ultra sleek & fully responsive -->
+    <nav class="bg-[#0a2540] text-white sticky top-0 z-50 shadow-xl">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
             <!-- Logo -->
             <div class="flex items-center gap-3">
                 <img src="logo.png" alt="Euniq Corporate Services Logo" class="h-10 w-auto">
-                <div>
-                    <span class="text-2xl font-semibold heading-font tracking-tight">Euniq</span>
-                    <span class="text-xl font-light text-[#d4af77]">Corporate Services</span>
+                <div class="flex flex-col">
+                    <span class="text-3xl font-bold heading-font tracking-[-1px]">Euniq</span>
+                    <span class="text-sm -mt-1 font-light text-[#d4af77] tracking-[1px]">CORPORATE SERVICES</span>
                 </div>
             </div>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <div class="hidden lg:flex items-center gap-9 text-sm font-medium">
                 <a href="index.html" class="nav-link text-white hover:text-[#d4af77]">Home</a>
                 <a href="#about" class="nav-link text-white hover:text-[#d4af77]">About Us</a>
                 <a href="#services" class="nav-link text-white hover:text-[#d4af77]">Services</a>
@@ -99,162 +130,163 @@
             </div>
 
             <div class="flex items-center gap-4">
-                <a href="mailto:recruitment@euniqcorporateservices.com" 
-                   class="hidden sm:flex items-center gap-2 bg-white text-[#0a2540] hover:bg-[#d4af77] hover:text-white px-6 py-3 rounded-full text-sm font-semibold">
-                    <i class="fas fa-envelope"></i>
-                    <span>Recruitment</span>
+                <!-- Phone + Email CTA -->
+                <a href="tel:+2349054303209" 
+                   class="hidden md:flex items-center gap-2 px-5 py-2.5 text-sm font-semibold bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-3xl border border-white/30">
+                    <i class="fas fa-phone"></i>
+                    <span>+234 905 430 3209</span>
                 </a>
                 
+                <a href="mailto:recruitment@euniqcorporateservices.com" 
+                   class="hidden sm:flex items-center gap-2 bg-[#d4af77] text-[#0a2540] hover:bg-white hover:text-[#0a2540] px-6 py-3 rounded-3xl text-sm font-semibold shadow-inner">
+                    <i class="fas fa-envelope"></i>
+                    <span>Hire Talent</span>
+                </a>
+
                 <!-- Mobile Menu Button -->
-                <button onclick="toggleMobileMenu()" class="md:hidden text-2xl">
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-3xl p-2">
                     <i class="fas fa-bars" id="menu-icon"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#0a2540] border-t border-[#d4af77]/20 px-6 py-6">
-            <div class="flex flex-col gap-6 text-lg font-medium">
-                <a href="index.html" class="flex items-center gap-3">🏠 Home</a>
-                <a href="#about" onclick="toggleMobileMenu()" class="flex items-center gap-3">ℹ️ About Us</a>
-                <a href="#services" onclick="toggleMobileMenu()" class="flex items-center gap-3">🛠️ Services</a>
-                <a href="jobs.html" onclick="toggleMobileMenu()" class="flex items-center gap-3">💼 Careers &amp; Vacancies</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="flex items-center gap-3">📞 Contact</a>
+        <!-- Mobile Menu - Fully responsive -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0a2540] border-t border-[#d4af77]/20 px-6 py-8">
+            <div class="flex flex-col gap-6 text-base font-medium">
+                <a href="index.html" class="flex items-center gap-3 py-2">🏠 Home</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2">ℹ️ About Us</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2">🛠️ Services</a>
+                <a href="jobs.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2">💼 Careers &amp; Vacancies</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="flex items-center gap-3 py-2">📞 Contact</a>
                 
-                <div class="pt-6 border-t border-[#d4af77]/20">
-                    <p class="text-xs uppercase tracking-widest mb-3 text-[#d4af77]">Get in touch</p>
-                    <a href="mailto:info@euniqcorporateservices.com" class="block py-2">info@euniqcorporateservices.com</a>
-                    <a href="mailto:contact@euniqcorporateservices.com" class="block py-2">contact@euniqcorporateservices.com</a>
+                <div class="pt-8 border-t border-[#d4af77]/20 flex flex-col gap-4">
+                    <a href="tel:+2349054303209" class="flex items-center justify-center gap-3 py-4 bg-white/10 rounded-3xl">
+                        <i class="fas fa-phone"></i>
+                        <span class="font-semibold">+234 905 430 3209</span>
+                    </a>
+                    <a href="mailto:recruitment@euniqcorporateservices.com" class="flex items-center justify-center gap-3 py-4 bg-[#d4af77] text-[#0a2540] rounded-3xl font-semibold">
+                        📧 recruitment@euniqcorporateservices.com
+                    </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="hero-bg h-screen flex items-center text-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
-                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white text-sm font-medium px-6 py-3 rounded-3xl border border-white/30">
-                    🌍 GLOBAL • REMOTE • PREMIUM RECRUITMENT
-                </div>
-                
-                <h1 class="text-6xl md:text-7xl leading-none font-bold heading-font">
-                    Connecting exceptional talent.<br>
-                    Building extraordinary teams.
-                </h1>
-                
-                <p class="text-xl text-white/90 max-w-lg">
-                    Euniq Corporate Services is a global recruitment powerhouse operating 100% remotely. 
-                    We match visionary companies with world-class professionals across continents.
-                </p>
-                
-                <div class="flex flex-wrap gap-4">
-                    <a href="jobs.html" 
-                       class="flex-1 md:flex-none bg-[#d4af77] hover:bg-white hover:text-[#0a2540] text-[#0a2540] font-semibold text-lg px-10 py-6 rounded-3xl flex items-center justify-center gap-3 shadow-xl">
-                        <i class="fas fa-briefcase"></i>
-                        Browse Open Roles
-                    </a>
-                    <button onclick="document.getElementById('post-job-modal').classList.remove('hidden')" 
-                            class="flex-1 md:flex-none border-2 border-white hover:bg-white hover:text-[#0a2540] font-semibold text-lg px-10 py-6 rounded-3xl flex items-center justify-center gap-3">
-                        <i class="fas fa-plus"></i>
-                        Post a Vacancy
-                    </button>
-                </div>
-                
-                <div class="flex items-center gap-8 text-sm">
-                    <div>
-                        <span class="block text-3xl font-semibold">250+</span>
-                        <span class="text-white/70">Placements this year</span>
-                    </div>
-                    <div>
-                        <span class="block text-3xl font-semibold">18</span>
-                        <span class="text-white/70">Countries represented</span>
-                    </div>
-                    <div>
-                        <span class="block text-3xl font-semibold">4.98</span>
-                        <span class="text-white/70">Average client rating</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Hero visual -->
-            <div class="hidden md:flex justify-end">
-                <div class="bg-white/10 backdrop-blur-3xl p-8 rounded-3xl border border-white/20 max-w-xs">
-                    <div class="text-center mb-6">
-                        <div class="inline-flex bg-[#d4af77] text-[#0a2540] rounded-2xl px-6 py-2 text-sm font-bold">NOW HIRING GLOBALLY</div>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="flex gap-4 items-start">
-                            <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-2xl">🌍</div>
-                            <div>
-                                <p class="font-semibold">Remote Senior Developer</p>
-                                <p class="text-white/70 text-sm">€145k • Europe / Asia / Americas</p>
-                            </div>
+    <!-- HERO SLIDER - Professional recruitment images -->
+    <header class="hero-slider relative">
+        <!-- Slide 1 -->
+        <div id="slide-1" class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2000&q=80')"></div>
+        <!-- Slide 2 -->
+        <div id="slide-2" class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80')"></div>
+        <!-- Slide 3 -->
+        <div id="slide-3" class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1582213782179-e0d53f9f5c4f?auto=format&fit=crop&w=2000&q=80')"></div>
+        
+        <div class="hero-overlay flex items-center">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+                <div class="grid lg:grid-cols-2 gap-12 items-center h-full">
+                    <div class="space-y-8 pt-12 lg:pt-0">
+                        <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-2xl text-white text-sm font-semibold px-8 py-4 rounded-3xl border border-white/30 shadow-inner">
+                            🌍 GLOBAL • REMOTE • PREMIUM RECRUITMENT
                         </div>
-                        <div class="flex gap-4 items-start">
-                            <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-2xl">📈</div>
+                        
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl leading-none font-bold heading-font text-white">
+                            Connecting exceptional talent.<br>
+                            Building extraordinary teams.
+                        </h1>
+                        
+                        <p class="text-xl md:text-2xl text-white/90 max-w-lg">
+                            Fully remote global recruitment company based in Lagos. 
+                            We deliver world-class talent to visionary organizations across continents.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="jobs.html" 
+                               class="flex-1 lg:flex-none bg-[#d4af77] hover:bg-white hover:text-[#0a2540] text-[#0a2540] font-semibold text-xl px-10 py-7 rounded-3xl flex items-center justify-center gap-3 shadow-2xl">
+                                <i class="fas fa-briefcase"></i>
+                                Browse Open Roles
+                            </a>
+                            <button onclick="document.getElementById('post-job-modal').classList.remove('hidden')" 
+                                    class="flex-1 lg:flex-none border-2 border-white text-white hover:bg-white hover:text-[#0a2540] font-semibold text-xl px-10 py-7 rounded-3xl flex items-center justify-center gap-3">
+                                <i class="fas fa-plus"></i>
+                                Post a Vacancy
+                            </button>
+                        </div>
+                        
+                        <div class="flex items-center gap-8 text-white/80">
                             <div>
-                                <p class="font-semibold">Global Head of Sales</p>
-                                <p class="text-white/70 text-sm">USD $220k • Fully remote</p>
+                                <span class="block text-4xl font-semibold">250+</span>
+                                <span class="text-sm">Placements this year</span>
+                            </div>
+                            <div>
+                                <span class="block text-4xl font-semibold">18</span>
+                                <span class="text-sm">Countries</span>
+                            </div>
+                            <div>
+                                <span class="block text-4xl font-semibold">4.98</span>
+                                <span class="text-sm">Client rating</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="absolute bottom-10 left-1/2 flex flex-col items-center text-white/60 text-xs tracking-widest">
-            <i class="fas fa-chevron-down animate-bounce mb-1"></i>
-            SCROLL FOR MORE
+
+        <!-- Slider controls -->
+        <div class="absolute bottom-12 left-1/2 flex gap-3 z-20">
+            <button onclick="prevSlide()" class="w-10 h-10 bg-white/10 hover:bg-white/30 backdrop-blur-xl rounded-2xl flex items-center justify-center text-white"><i class="fas fa-chevron-left"></i></button>
+            <button onclick="nextSlide()" class="w-10 h-10 bg-white/10 hover:bg-white/30 backdrop-blur-xl rounded-2xl flex items-center justify-center text-white"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <!-- Slide indicators -->
+        <div id="slide-dots" class="absolute bottom-8 right-8 flex gap-3 z-20"></div>
+
+        <div class="absolute bottom-8 left-1/2 flex flex-col items-center text-white/70 text-xs tracking-[2px] lg:hidden">
+            <i class="fas fa-chevron-down animate-bounce"></i>
+            SCROLL
         </div>
     </header>
 
     <!-- ABOUT -->
     <section id="about" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-16 items-center">
-                <div class="md:col-span-7">
-                    <h2 class="text-5xl heading-font font-semibold mb-8">We don't just recruit.<br>We transform futures.</h2>
-                    <p class="text-xl text-gray-600 max-w-2xl mb-10">
-                        As a fully remote, global recruitment company, Euniq Corporate Services brings together elite talent and forward-thinking organizations without geographical limits. 
-                        Our network spans 6 continents. Our success rate is unmatched.
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-7">
+                    <h2 class="text-5xl lg:text-6xl heading-font font-semibold mb-8">We don’t just recruit.<br>We transform futures.</h2>
+                    <p class="text-2xl text-gray-600 max-w-2xl mb-10">
+                        100% remote global recruitment company. From Lagos to the world. 
+                        We connect elite professionals with forward-thinking organizations across 6 continents.
                     </p>
                     
-                    <div class="flex flex-wrap gap-8 text-sm">
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-globe text-4xl text-[#d4af77]"></i>
+                    <div class="flex flex-wrap gap-8">
+                        <div class="flex items-center gap-6">
+                            <i class="fas fa-globe text-5xl text-[#d4af77]"></i>
                             <div>
-                                <strong class="block">100% Remote</strong>
+                                <strong class="block text-2xl">100% Remote</strong>
                                 <span class="text-gray-500">We work from anywhere</span>
                             </div>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-users text-4xl text-[#d4af77]"></i>
+                        <div class="flex items-center gap-6">
+                            <i class="fas fa-users text-5xl text-[#d4af77]"></i>
                             <div>
-                                <strong class="block">Global Network</strong>
-                                <span class="text-gray-500">50,000+ professionals</span>
+                                <strong class="block text-2xl">50,000+</strong>
+                                <span class="text-gray-500">Professionals in our network</span>
                             </div>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-shield-alt text-4xl text-[#d4af77]"></i>
+                        <div class="flex items-center gap-6">
+                            <i class="fas fa-shield-alt text-5xl text-[#d4af77]"></i>
                             <div>
-                                <strong class="block">Confidential &amp; Premium</strong>
+                                <strong class="block text-2xl">Confidential</strong>
                                 <span class="text-gray-500">Executive-level service</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="md:col-span-5 bg-[#0a2540] text-white p-10 rounded-3xl">
-                    <h3 class="text-[#d4af77] uppercase tracking-widest text-sm mb-4">Our Mission</h3>
-                    <p class="text-3xl leading-tight heading-font">
-                        To make exceptional talent acquisition effortless, borderless, and remarkably successful.
-                    </p>
-                    <div class="mt-12 flex items-center gap-3 text-sm">
-                        <div class="flex-1 h-px bg-white/30"></div>
-                        <span>— Founded in Lagos • Operating worldwide</span>
-                        <div class="flex-1 h-px bg-white/30"></div>
-                    </div>
+                <!-- Professional recruitment image -->
+                <div class="lg:col-span-5">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Global recruitment team collaborating remotely" 
+                         class="rounded-3xl shadow-2xl w-full">
                 </div>
             </div>
         </div>
@@ -262,54 +294,38 @@
 
     <!-- SERVICES -->
     <section id="services" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="px-4 py-2 bg-[#d4af77] text-[#0a2540] rounded-full text-sm font-semibold">WHAT WE OFFER</span>
-                <h2 class="text-5xl heading-font font-semibold mt-4">Premium Recruitment Services</h2>
+                <span class="px-6 py-3 bg-[#d4af77] text-[#0a2540] rounded-3xl text-sm font-semibold">PREMIUM SERVICES</span>
+                <h2 class="text-5xl lg:text-6xl heading-font font-semibold mt-4">Talent acquisition, perfected</h2>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm job-card">
-                    <div class="h-12 w-12 bg-[#0a2540] text-white rounded-2xl flex items-center justify-center text-3xl mb-6">🔍</div>
-                    <h3 class="text-2xl font-semibold mb-3">Executive Search</h3>
-                    <p class="text-gray-600">C-level and senior leadership placements with rigorous assessment and cultural fit guarantees.</p>
-                    <div class="mt-8 text-[#d4af77] text-sm font-medium flex items-center gap-2">
-                        LEARN MORE <i class="fas fa-arrow-right"></i>
-                    </div>
+                <div class="bg-white p-10 rounded-3xl job-card">
+                    <div class="text-6xl mb-6">🔍</div>
+                    <h3 class="text-3xl font-semibold mb-4">Executive Search</h3>
+                    <p class="text-gray-600">C-suite and senior leadership placements with 100% cultural-fit guarantee.</p>
                 </div>
-                
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm job-card">
-                    <div class="h-12 w-12 bg-[#0a2540] text-white rounded-2xl flex items-center justify-center text-3xl mb-6">📌</div>
-                    <h3 class="text-2xl font-semibold mb-3">Permanent Placement</h3>
-                    <p class="text-gray-600">Full-time roles across tech, finance, healthcare, marketing and every industry that matters.</p>
-                    <div class="mt-8 text-[#d4af77] text-sm font-medium flex items-center gap-2">
-                        LEARN MORE <i class="fas fa-arrow-right"></i>
-                    </div>
+                <div class="bg-white p-10 rounded-3xl job-card">
+                    <div class="text-6xl mb-6">📌</div>
+                    <h3 class="text-3xl font-semibold mb-4">Permanent Placement</h3>
+                    <p class="text-gray-600">Full-time roles in tech, finance, healthcare, marketing &amp; beyond.</p>
                 </div>
-                
-                <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm job-card">
-                    <div class="h-12 w-12 bg-[#0a2540] text-white rounded-2xl flex items-center justify-center text-3xl mb-6">⏱️</div>
-                    <h3 class="text-2xl font-semibold mb-3">Contract &amp; Interim</h3>
-                    <p class="text-gray-600">Flexible talent for project-based, seasonal or maternity cover needs — instantly deployable.</p>
-                    <div class="mt-8 text-[#d4af77] text-sm font-medium flex items-center gap-2">
-                        LEARN MORE <i class="fas fa-arrow-right"></i>
-                    </div>
+                <div class="bg-white p-10 rounded-3xl job-card">
+                    <div class="text-6xl mb-6">⏱️</div>
+                    <h3 class="text-3xl font-semibold mb-4">Contract &amp; Interim</h3>
+                    <p class="text-gray-600">Instant access to specialist talent for projects or seasonal needs.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURED JOBS TEASER -->
+    <!-- FEATURED JOBS -->
     <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-baseline mb-12">
-                <h2 class="text-4xl heading-font font-semibold">Featured Vacancies</h2>
-                <a href="jobs.html" class="text-[#d4af77] flex items-center gap-2 font-medium text-lg hover:gap-3">
-                    View all roles <i class="fas fa-arrow-right"></i>
-                </a>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="text-4xl lg:text-5xl heading-font font-semibold">Featured Vacancies</h2>
+                <a href="jobs.html" class="text-[#d4af77] flex items-center gap-3 text-lg font-medium">See all roles <i class="fas fa-arrow-right"></i></a>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8" id="featured-jobs">
@@ -318,287 +334,57 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="py-24 bg-[#0a2540] text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-16">
-                <div class="md:col-span-5">
-                    <h2 class="text-5xl heading-font font-semibold">What our clients &amp; candidates say</h2>
-                    <p class="mt-6 text-white/70">Real stories from real partnerships.</p>
-                </div>
-                
-                <div class="md:col-span-7 space-y-12">
-                    <div class="flex gap-8">
-                        <div class="flex-shrink-0 text-7xl text-[#d4af77]">“</div>
-                        <div>
-                            <p class="text-2xl italic">"Euniq found our VP of Engineering in under 3 weeks. The candidate was a perfect cultural and technical fit — and fully remote from Singapore."</p>
-                            <div class="mt-8 flex items-center gap-4">
-                                <div class="w-10 h-10 bg-white/20 rounded-2xl"></div>
-                                <div>
-                                    <strong>Dr. Aisha Okoro</strong><br>
-                                    <span class="text-[#d4af77]">CEO, Fintech Africa</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex gap-8">
-                        <div class="flex-shrink-0 text-7xl text-[#d4af77]">“</div>
-                        <div>
-                            <p class="text-2xl italic">"I landed my dream role in 48 hours after applying through Euniq. The team handled everything seamlessly across time zones."</p>
-                            <div class="mt-8 flex items-center gap-4">
-                                <div class="w-10 h-10 bg-white/20 rounded-2xl"></div>
-                                <div>
-                                    <strong>Michael Chen</strong><br>
-                                    <span class="text-[#d4af77]">Head of Product, Singapore</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CONTACT / CTA -->
-    <section id="contact" class="py-24 bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+    <section id="contact" class="py-24 bg-[#0a2540] text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16">
             <div>
-                <h2 class="text-5xl heading-font font-semibold mb-6">Ready to hire exceptional talent or find your next role?</h2>
-                <p class="text-2xl text-white/70 mb-10">We work remotely. We deliver globally.</p>
+                <h2 class="text-5xl lg:text-6xl heading-font font-semibold mb-6">Ready to hire exceptional talent?</h2>
+                <p class="text-2xl text-white/70 mb-12">We work remotely. We deliver globally.</p>
                 
-                <div class="space-y-6">
+                <div class="space-y-8">
                     <div class="flex items-center gap-6">
-                        <i class="fas fa-envelope text-3xl text-[#d4af77]"></i>
+                        <i class="fas fa-phone text-4xl text-[#d4af77]"></i>
                         <div>
-                            <a href="mailto:recruitment@euniqcorporateservices.com" class="block text-xl">recruitment@euniqcorporateservices.com</a>
-                            <a href="mailto:contact@euniqcorporateservices.com" class="block text-xl">contact@euniqcorporateservices.com</a>
-                            <a href="mailto:info@euniqcorporateservices.com" class="block text-xl">info@euniqcorporateservices.com</a>
+                            <a href="tel:+2349054303209" class="block text-3xl font-medium">+234 905 430 3209</a>
                         </div>
                     </div>
-                    
                     <div class="flex items-center gap-6">
-                        <i class="fas fa-map-marker-alt text-3xl text-[#d4af77]"></i>
-                        <div class="text-xl">
+                        <i class="fas fa-envelope text-4xl text-[#d4af77]"></i>
+                        <div>
+                            <a href="mailto:recruitment@euniqcorporateservices.com" class="block text-2xl">recruitment@euniqcorporateservices.com</a>
+                            <a href="mailto:contact@euniqcorporateservices.com" class="block text-2xl">contact@euniqcorporateservices.com</a>
+                            <a href="mailto:info@euniqcorporateservices.com" class="block text-2xl">info@euniqcorporateservices.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <i class="fas fa-map-marker-alt text-4xl text-[#d4af77]"></i>
+                        <div class="text-2xl">
                             We work remotely<br>
-                            <span class="text-white/60">Lagos • London • Singapore • New York • Everywhere</span>
+                            <span class="text-white/60">Lagos • Global • No borders</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Simple contact form -->
-            <div class="bg-white text-[#0a2540] p-10 rounded-3xl">
-                <form onsubmit="handleSubmit(event)" class="space-y-6">
-                    <div>
-                        <label class="block text-sm font-medium mb-2">Your name</label>
-                        <input type="text" required class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#d4af77]">
-                    </div>
+            <!-- Contact form -->
+            <div class="bg-white text-[#0a2540] p-10 lg:p-12 rounded-3xl">
+                <form onsubmit="handleSubmit(event)" class="space-y-8">
                     <div class="grid grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium mb-2">Email</label>
-                            <input type="email" required class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#d4af77]">
+                            <label class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" required class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#d4af77]">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium mb-2">Phone</label>
-                            <input type="tel" class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#d4af77]">
+                            <label class="block text-sm font-medium mb-2">Company / Role</label>
+                            <input type="text" class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#d4af77]">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-2">Message / Role you need</label>
-                        <textarea rows="4" class="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:outline-none focus:border-[#d4af77]"></textarea>
-                    </div>
-                    <button type="submit" 
-                            class="w-full py-6 bg-[#0a2540] text-white text-lg font-semibold rounded-3xl hover:bg-[#d4af77] hover:text-[#0a2540]">
-                        SEND MESSAGE
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-[#0a2540] text-white py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-y-10">
-                <div class="md:col-span-4">
-                    <div class="flex items-center gap-3 mb-6">
-                        <img src="logo.png" alt="Logo" class="h-9 w-auto">
-                        <span class="text-3xl heading-font">Euniq Corporate Services</span>
-                    </div>
-                    <p class="text-white/60 max-w-xs">Global recruitment, delivered remotely with precision and care.</p>
-                    
-                    <div class="mt-8 flex gap-4">
-                        <a href="#" class="w-9 h-9 bg-white/10 hover:bg-[#d4af77] rounded-2xl flex items-center justify-center"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="w-9 h-9 bg-white/10 hover:bg-[#d4af77] rounded-2xl flex items-center justify-center"><i class="fab fa-x-twitter"></i></a>
-                    </div>
-                </div>
-                
-                <div class="md:col-span-2">
-                    <h5 class="uppercase text-xs tracking-widest text-[#d4af77] mb-6">Company</h5>
-                    <a href="#" class="block py-2 text-white/70 hover:text-white">About Us</a>
-                    <a href="#" class="block py-2 text-white/70 hover:text-white">Our Process</a>
-                    <a href="#" class="block py-2 text-white/70 hover:text-white">Team</a>
-                </div>
-                
-                <div class="md:col-span-2">
-                    <h5 class="uppercase text-xs tracking-widest text-[#d4af77] mb-6">For Candidates</h5>
-                    <a href="jobs.html" class="block py-2 text-white/70 hover:text-white">Browse Jobs</a>
-                    <a href="#" class="block py-2 text-white/70 hover:text-white">Upload CV</a>
-                    <a href="#" class="block py-2 text-white/70 hover:text-white">Career Advice</a>
-                </div>
-                
-                <div class="md:col-span-2">
-                    <h5 class="uppercase text-xs tracking-widest text-[#d4af77] mb-6">For Employers</h5>
-                    <a onclick="document.getElementById('post-job-modal').classList.remove('hidden')" class="block py-2 text-white/70 hover:text-white">Post a Vacancy</a>
-                    <a href="#" class="block py-2 text-white/70 hover:text-white">Pricing</a>
-                    <a href="#" class="block py-2 text-white/70 hover:text-white">Client Portal</a>
-                </div>
-                
-                <div class="md:col-span-2">
-                    <h5 class="uppercase text-xs tracking-widest text-[#d4af77] mb-6">Contact</h5>
-                    <p class="text-white/70">recruitment@euniqcorporateservices.com</p>
-                    <p class="text-white/70">+234 000 000 0000</p>
-                    <p class="mt-8 text-xs text-white/40">© 2026 Euniq Corporate Services. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- POST JOB MODAL -->
-    <div id="post-job-modal" onclick="if(event.target.id === 'post-job-modal') this.classList.add('hidden')" 
-         class="hidden fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center">
-        <div onclick="event.stopImmediatePropagation()" 
-             class="bg-white text-[#0a2540] max-w-2xl w-full mx-4 rounded-3xl p-8 md:p-12">
-            <h2 class="text-4xl heading-font mb-8">Post a new vacancy</h2>
-            
-            <form onsubmit="postVacancy(event)" class="space-y-8">
-                <div class="grid grid-cols-2 gap-6">
-                    <div>
-                        <label class="text-xs uppercase font-medium">Job Title</label>
-                        <input id="job-title" type="text" placeholder="e.g. Senior Product Manager" required
-                               class="w-full mt-2 px-6 py-5 border rounded-3xl focus:outline-none focus:border-[#d4af77]">
+                        <label class="block text-sm font-medium mb-2">Email or Phone</label>
+                        <input type="text" required class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#d4af77]">
                     </div>
                     <div>
-                        <label class="text-xs uppercase font-medium">Department / Location</label>
-                        <input id="job-location" type="text" placeholder="Remote • Global" required
-                               class="w-full mt-2 px-6 py-5 border rounded-3xl focus:outline-none focus:border-[#d4af77]">
+                        <label class="block text-sm font-medium mb-2">Tell us what you need</label>
+                        <textarea rows="5" class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:outline-none focus:border-[#d4af77]"></textarea>
                     </div>
-                </div>
-                
-                <div>
-                    <label class="text-xs uppercase font-medium">Salary range (optional)</label>
-                    <input id="job-salary" type="text" placeholder="USD $120,000 – $160,000" 
-                           class="w-full mt-2 px-6 py-5 border rounded-3xl focus:outline-none focus:border-[#d4af77]">
-                </div>
-                
-                <div>
-                    <label class="text-xs uppercase font-medium">Job description / requirements</label>
-                    <textarea id="job-desc" rows="6" placeholder="Tell us about the role..." required
-                              class="w-full mt-2 px-6 py-5 border rounded-3xl focus:outline-none focus:border-[#d4af77]"></textarea>
-                </div>
-                
-                <div class="flex items-center justify-between pt-6">
-                    <button type="button" onclick="document.getElementById('post-job-modal').classList.add('hidden')" 
-                            class="px-10 py-6 text-lg">Cancel</button>
-                    <button type="submit" 
-                            class="bg-[#d4af77] text-[#0a2540] px-16 py-6 rounded-3xl text-lg font-semibold">Post Vacancy Now</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        // Tailwind script already loaded
-        function initializeTailwind() {
-            // Already initialized via CDN
-        }
-        
-        // Sample jobs data
-        const sampleJobs = [
-            {
-                title: "Senior Full Stack Engineer",
-                location: "Fully Remote • Global",
-                salary: "€110,000 – €145,000",
-                type: "Permanent"
-            },
-            {
-                title: "Global Marketing Director",
-                location: "Remote • EMEA / APAC",
-                salary: "USD $165,000+",
-                type: "Permanent"
-            },
-            {
-                title: "Chief Financial Officer",
-                location: "Remote • Africa / Europe",
-                salary: "Negotiable",
-                type: "Executive"
-            }
-        ]
-        
-        // Render featured jobs on homepage
-        function renderFeaturedJobs() {
-            const container = document.getElementById('featured-jobs')
-            container.innerHTML = sampleJobs.map(job => `
-                <div class="job-card bg-white border border-gray-100 rounded-3xl p-8 hover:border-[#d4af77]">
-                    <div class="flex justify-between items-start mb-6">
-                        <span class="text-xs font-semibold tracking-widest bg-[#0a2540] text-white px-4 py-2 rounded-3xl">${job.type}</span>
-                        <span class="text-[#d4af77] text-sm">${job.salary}</span>
-                    </div>
-                    <h4 class="text-2xl font-semibold mb-1">${job.title}</h4>
-                    <p class="text-gray-500 flex items-center gap-2"><i class="fas fa-location-dot"></i> ${job.location}</p>
-                    <button onclick="window.location='jobs.html'" 
-                            class="mt-10 w-full py-5 text-sm font-semibold border-2 border-[#0a2540] hover:bg-[#0a2540] hover:text-white rounded-3xl">
-                        VIEW ROLE &amp; APPLY
-                    </button>
-                </div>
-            `).join('')
-        }
-        
-        // Toggle mobile menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu')
-            const icon = document.getElementById('menu-icon')
-            menu.classList.toggle('hidden')
-            if (menu.classList.contains('hidden')) {
-                icon.classList.replace('fa-times', 'fa-bars')
-            } else {
-                icon.classList.replace('fa-bars', 'fa-times')
-            }
-        }
-        
-        // Fake form submission
-        function handleSubmit(e) {
-            e.preventDefault()
-            alert("✅ Thank you! Your message has been received. Our global recruitment team will reply within 2 hours.")
-            e.target.reset()
-        }
-        
-        // Post a new vacancy
-        function postVacancy(e) {
-            e.preventDefault()
-            
-            const title = document.getElementById('job-title').value
-            const location = document.getElementById('job-location').value
-            const desc = document.getElementById('job-desc').value
-            
-            alert(`🎉 Vacancy posted successfully!\n\nTitle: ${title}\nLocation: ${location}\n\nYour new role has been added to the Careers page and will be visible immediately.`)
-            
-            // Close modal
-            document.getElementById('post-job-modal').classList.add('hidden')
-            
-            // In a real app this would save to a database
-            console.log('%cNew vacancy posted:', 'color:#d4af77;font-weight:bold', { title, location, desc })
-        }
-        
-        // Initialize everything
-        window.onload = function() {
-            renderFeaturedJobs()
-            console.log('%c✅ Euniq Corporate Services premium website loaded successfully!', 'color:#d4af77;font-size:13px;font-weight:600')
-            console.log('📍 Logo: logo.png (already in repo)')
-            console.log('📧 Emails configured')
-            console.log('🌍 Fully remote global recruitment theme active')
-        }
-    </script>
-</body>
-</html>
+      
