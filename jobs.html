@@ -1,60 +1,222 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Jobs - Euniq Corporate Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-/* SAME CSS FROM INDEX */
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Positions - Euniq Corporate Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .heading-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+    </style>
 </head>
+<body class="bg-zinc-950 text-white">
 
-<body>
+    <!-- NAVBAR (same as homepage) -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Euniq Corporate Services" class="h-10 w-auto">
+                <div>
+                    <span class="text-2xl font-bold tracking-tighter heading-font">Euniq</span>
+                    <span class="text-zinc-400 text-sm block -mt-1">Corporate Services</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="index.html" class="nav-link text-zinc-300 hover:text-white">Home</a>
+                <a href="index.html#about" class="nav-link text-zinc-300 hover:text-white">About</a>
+                <a href="index.html#services" class="nav-link text-zinc-300 hover:text-white">Services</a>
+                <a href="index.html#how" class="nav-link text-zinc-300 hover:text-white">How It Works</a>
+                <a href="jobs.html" class="nav-link text-white font-semibold border-b-2 border-white pb-1">Open Positions</a>
+                <a href="index.html#talent" class="nav-link text-zinc-300 hover:text-white">For Talent</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="mailto:recruitment@euniqcorporateservices.com" 
+                   class="px-6 py-3 text-sm font-semibold border border-white/30 hover:border-white/70 rounded-full transition-colors">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </nav>
 
-<div class="topbar">
-<div class="logo">Euniq Corporate Services</div>
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <!-- HERO -->
+    <section class="pt-32 pb-16 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="inline-block px-6 py-2 bg-white/10 text-xs tracking-widest rounded-full mb-6">GLOBAL OPPORTUNITIES</span>
+                <h1 class="text-6xl md:text-7xl heading-font font-bold tracking-tighter mb-6">Open Positions</h1>
+                <p class="text-xl text-zinc-400">
+                    Join visionary companies through Euniq's exclusive executive and specialist roles.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<div class="nav" id="navMenu">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="jobs.html">Jobs</a>
-<a href="contact.html">Contact</a>
-</div>
-</div>
+    <!-- FILTERS & SEARCH -->
+    <div class="max-w-7xl mx-auto px-8 py-10 border-b border-white/10">
+        <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="flex-1">
+                <div class="relative">
+                    <input id="searchInput" 
+                           type="text" 
+                           placeholder="Search roles, skills, or keywords..." 
+                           class="w-full bg-zinc-900 border border-white/20 focus:border-white/50 rounded-3xl px-8 py-6 outline-none text-lg">
+                    <i class="fa-solid fa-magnifying-glass absolute right-8 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+                </div>
+            </div>
+            
+            <div class="flex gap-4 w-full md:w-auto">
+                <select id="locationFilter" class="bg-zinc-900 border border-white/20 rounded-3xl px-6 py-6 outline-none">
+                    <option value="">All Locations</option>
+                    <option value="Remote">Remote / Global</option>
+                    <option value="Lagos">Lagos, Nigeria</option>
+                    <option value="London">London, UK</option>
+                    <option value="Dubai">Dubai, UAE</option>
+                    <option value="New York">New York, USA</option>
+                </select>
+                
+                <select id="typeFilter" class="bg-zinc-900 border border-white/20 rounded-3xl px-6 py-6 outline-none">
+                    <option value="">All Types</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Executive">Executive Search</option>
+                </select>
+            </div>
+        </div>
+    </div>
 
-<div class="section">
-<h1>Available Jobs</h1>
+    <!-- JOBS GRID -->
+    <section class="max-w-7xl mx-auto px-8 py-16">
+        <div id="jobsContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Example Job Cards (you can add more) -->
+            <div class="job-card bg-zinc-900 rounded-3xl p-8 border border-white/10 hover:border-white/30 transition-all group">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-emerald-400 text-xs font-medium tracking-widest">EXECUTIVE</span>
+                        <h3 class="text-2xl font-semibold mt-2 group-hover:text-emerald-400 transition-colors">Chief Technology Officer</h3>
+                    </div>
+                    <span class="text-xs bg-white/10 px-4 py-2 rounded-full">Full-time</span>
+                </div>
+                <p class="text-zinc-400 line-clamp-3 mb-8">
+                    Leading fintech startup seeking a visionary CTO to scale their engineering organization across Africa and Europe.
+                </p>
+                <div class="flex items-center justify-between text-sm">
+                    <div class="flex items-center gap-2 text-zinc-500">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Remote / Lagos</span>
+                    </div>
+                    <a href="mailto:recruitment@euniqcorporateservices.com?subject=Application: Chief Technology Officer" 
+                       class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-2">
+                        Apply Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
 
-<div class="grid">
+            <!-- Add more job cards here following the same structure -->
+            <!-- Example 2 -->
+            <div class="job-card bg-zinc-900 rounded-3xl p-8 border border-white/10 hover:border-white/30 transition-all group">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <span class="text-blue-400 text-xs font-medium tracking-widest">SPECIALIST</span>
+                        <h3 class="text-2xl font-semibold mt-2 group-hover:text-blue-400 transition-colors">Head of Growth Marketing</h3>
+                    </div>
+                    <span class="text-xs bg-white/10 px-4 py-2 rounded-full">Full-time</span>
+                </div>
+                <p class="text-zinc-400 line-clamp-3 mb-8">
+                    Scale a Series B healthtech company’s user acquisition across emerging markets.
+                </p>
+                <div class="flex items-center justify-between text-sm">
+                    <div class="flex items-center gap-2 text-zinc-500">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Remote / Global</span>
+                    </div>
+                    <a href="mailto:recruitment@euniqcorporateservices.com?subject=Application: Head of Growth Marketing" 
+                       class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-2">
+                        Apply Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
 
-<div class="card job">
-<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
-<b>Accounting Manager</b>
-<p>Draper, UT</p>
-</div>
+            <!-- You can duplicate and customize more cards -->
+        </div>
 
-<div class="card job">
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-<b>Software Engineer</b>
-<p>Remote</p>
-</div>
+        <!-- Empty State (shown if no jobs match filters) -->
+        <div id="emptyState" class="hidden text-center py-20">
+            <i class="fa-solid fa-briefcase text-7xl text-zinc-700 mb-6"></i>
+            <h3 class="text-3xl font-medium mb-3">No matching positions right now</h3>
+            <p class="text-zinc-400 max-w-md mx-auto">
+                We are constantly adding exclusive roles. Submit your profile or check back soon.
+            </p>
+            <a href="mailto:recruitment@euniqcorporateservices.com" 
+               class="mt-8 inline-block px-8 py-4 bg-white text-black rounded-2xl font-medium">
+                Submit Your Profile
+            </a>
+        </div>
+    </section>
 
-<div class="card job">
-<img src="https://images.unsplash.com/photo-1556761175-b413da4baf72">
-<b>HR Specialist</b>
-<p>Global</p>
-</div>
+    <!-- CTA -->
+    <section class="py-20 bg-black border-t border-white/10">
+        <div class="max-w-4xl mx-auto text-center px-8">
+            <h2 class="text-5xl heading-font font-bold tracking-tighter mb-6">Don't see your dream role?</h2>
+            <p class="text-xl text-zinc-400 mb-10">Let us know what you're looking for. Our team will reach out with matching opportunities.</p>
+            <a href="mailto:recruitment@euniqcorporateservices.com" 
+               class="inline-flex items-center gap-4 px-10 py-6 bg-white text-black rounded-3xl font-semibold text-lg hover:bg-emerald-400 transition-colors">
+                Send Us Your CV <i class="fa-solid fa-paper-plane"></i>
+            </a>
+        </div>
+    </section>
 
-</div>
+    <!-- Footer (same as homepage - copy from previous index.html) -->
+    <!-- Paste your footer here for consistency -->
 
-</div>
+    <script>
+        // Simple live filter
+        const searchInput = document.getElementById('searchInput');
+        const locationFilter = document.getElementById('locationFilter');
+        const typeFilter = document.getElementById('typeFilter');
+        const jobsContainer = document.getElementById('jobsContainer');
+        const emptyState = document.getElementById('emptyState');
 
-<script>
-function toggleMenu(){
-document.getElementById("navMenu").classList.toggle("show");
-}
-</script>
+        function filterJobs() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const locationVal = locationFilter.value;
+            const typeVal = typeFilter.value;
 
+            const cards = document.querySelectorAll('.job-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const locationText = card.textContent.toLowerCase();
+                
+                const matchesSearch = title.includes(searchTerm) || locationText.includes(searchTerm);
+                const matchesLocation = !locationVal || locationText.includes(locationVal.toLowerCase());
+                const matchesType = !typeVal || card.textContent.includes(typeVal);
+
+                if (matchesSearch && matchesLocation && matchesType) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            emptyState.classList.toggle('hidden', visibleCount > 0);
+        }
+
+        searchInput.addEventListener('input', filterJobs);
+        locationFilter.addEventListener('change', filterJobs);
+        typeFilter.addEventListener('change', filterJobs);
+    </script>
 </body>
 </html>
