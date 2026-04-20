@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Euniq Corporate Services | Global Executive Recruitment</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
         
@@ -59,319 +61,91 @@
         }
     </style>
 </head>
+
 <body class="font-sans antialiased">
 
-    <!-- NAVBAR -->
-    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
-            <div class="flex justify-between items-center py-5">
-                <!-- Your Exact Logo (Direct Link) -->
-                <div class="flex items-center gap-3">
-                    <img src="https://i.imgur.com/kZCcLmP.png" 
-                         alt="Euniq Corporate Services" 
-                         class="h-12 sm:h-16 w-auto object-contain"
-                         onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
-                    
-                    <!-- Fallback -->
-                    <div id="logo-fallback" class="hidden items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center text-white text-3xl font-bold">E</div>
-                        <div>
-                            <span class="text-xl sm:text-2xl font-semibold">Euniq</span>
-                            <p class="text-[10px] font-medium text-teal-600 -mt-1 tracking-widest">CORPORATE SERVICES</p>
-                        </div>
-                    </div>
-                </div>
+<!-- NAVBAR -->
+<nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
+        <div class="flex justify-between items-center py-5">
 
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center gap-x-9 text-base font-medium text-slate-700">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#services" class="nav-link">Services</a>
-                    <a href="#employers" class="nav-link">For Employers</a>
-                    <a href="#jobseekers" class="nav-link">For Job Seekers</a>
-                    <a href="#careers" class="nav-link">Careers</a>
-                    <a href="#insights" class="nav-link">Insights</a>
-                </div>
+            <!-- LOGO (UPDATED TO LOCAL FILE) -->
+            <div class="flex items-center gap-3">
+                <img src="logo.png" 
+                     alt="Euniq Corporate Services" 
+                     class="h-12 sm:h-16 w-auto object-contain">
 
-                <div class="flex items-center gap-x-5">
-                    <a href="tel:+2349054303209" class="hidden md:flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-teal-600">
-                        <i class="fa-solid fa-phone"></i>
-                        +234 905 430 3209
-                    </a>
-                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
-                            class="bg-gradient-to-r from-teal-500 to-amber-600 hover:from-teal-600 hover:to-amber-700 text-white font-semibold px-7 py-3.5 rounded-3xl text-sm shadow-md">
-                        GET IN TOUCH
-                    </button>
-                    <button onclick="toggleMobileMenu()" class="lg:hidden text-3xl text-slate-700">
-                        <i id="mobile-icon" class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden lg:hidden bg-white border-t py-6 px-4">
-                <div class="flex flex-col gap-y-6 text-base font-medium text-slate-700">
-                    <a href="#home" onclick="toggleMobileMenu()">Home</a>
-                    <a href="#about" onclick="toggleMobileMenu()">About</a>
-                    <a href="#services" onclick="toggleMobileMenu()">Services</a>
-                    <a href="#employers" onclick="toggleMobileMenu()">For Employers</a>
-                    <a href="#jobseekers" onclick="toggleMobileMenu()">For Job Seekers</a>
-                    <a href="#careers" onclick="toggleMobileMenu()">Careers</a>
-                    <a href="#insights" onclick="toggleMobileMenu()">Insights</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO SLIDER -->
-    <header id="home" class="relative h-screen overflow-hidden text-white">
-        <div id="slide-1" class="hero-slide active" style="background: linear-gradient(rgba(17,24,39,0.88), rgba(17,24,39,0.88)), url('https://picsum.photos/id/1015/2000/1200') center/cover;">
-            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 h-full flex items-center">
-                <div class="max-w-2xl">
-                    <div class="inline-flex bg-white/10 backdrop-blur-md px-6 py-2.5 rounded-3xl text-sm border border-white/30">PREMIUM GLOBAL RECRUITMENT</div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight tracking-[-1.5px] mt-6">Connecting elite global talent with visionary organizations</h1>
-                    <p class="mt-7 text-lg text-white/90">Discreet executive search and talent acquisition delivered with precision and excellence.</p>
-                    
-                    <div class="mt-12 flex flex-col sm:flex-row gap-4">
-                        <button onclick="document.getElementById('employers').scrollIntoView({ behavior: 'smooth' })" 
-                                class="bg-white text-slate-900 px-9 py-5 rounded-3xl font-semibold text-base shadow-lg">HIRE ELITE TALENT</button>
-                        <button onclick="document.getElementById('careers').scrollIntoView({ behavior: 'smooth' })" 
-                                class="border-2 border-white px-9 py-5 rounded-3xl font-semibold text-base hover:bg-white hover:text-slate-900">EXPLORE OPPORTUNITIES</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="slide-2" class="hero-slide" style="background: linear-gradient(rgba(17,24,39,0.88), rgba(17,24,39,0.88)), url('https://picsum.photos/id/1016/2000/1200') center/cover;"></div>
-        <div id="slide-3" class="hero-slide" style="background: linear-gradient(rgba(17,24,39,0.88), rgba(17,24,39,0.88)), url('https://picsum.photos/id/133/2000/1200') center/cover;"></div>
-
-        <div class="absolute bottom-10 left-1/2 flex gap-3 z-20">
-            <button onclick="showSlide(1)" id="dot-1" class="w-3.5 h-3.5 rounded-full bg-white/60 hover:bg-amber-400"></button>
-            <button onclick="showSlide(2)" id="dot-2" class="w-3.5 h-3.5 rounded-full bg-white/60 hover:bg-amber-400"></button>
-            <button onclick="showSlide(3)" id="dot-3" class="w-3.5 h-3.5 rounded-full bg-white/60 hover:bg-amber-400"></button>
-        </div>
-    </header>
-
-    <!-- ABOUT -->
-    <section id="about" class="py-20 lg:py-28 bg-slate-50">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
-            <div class="grid lg:grid-cols-12 gap-16 items-center">
-                <div class="lg:col-span-5">
-                    <span class="px-6 py-2 bg-teal-100 text-teal-700 rounded-3xl text-sm font-semibold">EST. 2018 • GLOBAL • REMOTE-FIRST</span>
-                    <h2 class="text-4xl sm:text-5xl font-semibold mt-6 leading-tight">We architect exceptional careers and high-performing leadership teams worldwide.</h2>
-                    <p class="mt-8 text-lg text-slate-600">Euniq Corporate Services is a premium global recruitment firm specializing in discreet executive search and strategic talent acquisition.</p>
-                </div>
-                <div class="lg:col-span-7 bg-white rounded-3xl p-10 lg:p-14 shadow-xl">
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <div>
-                            <h4 class="font-semibold text-xl mb-4">Our Approach</h4>
-                            <p class="text-slate-600">Combining deep industry insight, advanced talent intelligence, and a human-first methodology to deliver lasting placements.</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-xl mb-4">Our Commitment</h4>
-                            <ul class="space-y-4 text-slate-600">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-teal-500 mt-1"></i>Absolute confidentiality</li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-teal-500 mt-1"></i>Global reach with local insight</li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-teal-500 mt-1"></i>Exceptional candidate experience</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="py-20 lg:py-28 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl sm:text-5xl font-semibold">Premium Global Services</h2>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="premium-card bg-white border border-slate-100 rounded-3xl p-10">
-                    <div class="text-5xl mb-6">👑</div>
-                    <h3 class="text-3xl font-semibold">Executive & C-Suite Search</h3>
-                    <p class="mt-5 text-slate-600">Discreet, high-impact placements for CEOs, CFOs, CTOs and board-level roles.</p>
-                </div>
-                <div class="premium-card bg-white border border-slate-100 rounded-3xl p-10">
-                    <div class="text-5xl mb-6">🌍</div>
-                    <h3 class="text-3xl font-semibold">International Talent Acquisition</h3>
-                    <p class="mt-5 text-slate-600">Mid-to-senior permanent recruitment with a truly global candidate pool.</p>
-                </div>
-                <div class="premium-card bg-white border border-slate-100 rounded-3xl p-10">
-                    <div class="text-5xl mb-6">⚡</div>
-                    <h3 class="text-3xl font-semibold">Contract & Interim Leadership</h3>
-                    <p class="mt-5 text-slate-600">Rapid deployment of specialized professionals and interim executives.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOR EMPLOYERS -->
-    <section id="employers" class="py-20 lg:py-28 bg-slate-950 text-white">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
-            <div class="grid lg:grid-cols-12 gap-16">
-                <div class="lg:col-span-5">
-                    <h2 class="text-4xl sm:text-5xl font-semibold">For Employers</h2>
-                    <p class="mt-8 text-lg text-slate-300">Secure the leadership talent that drives transformation and sustained success.</p>
-                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
-                            class="mt-12 bg-white text-slate-900 px-10 py-5 rounded-3xl font-semibold text-lg">BEGIN YOUR SEARCH</button>
-                </div>
-                <div class="lg:col-span-7 bg-white/10 backdrop-blur rounded-3xl p-12">
-                    <p class="text-3xl leading-tight">"Euniq consistently delivers exceptional leaders who make an immediate and lasting impact."</p>
-                    <p class="mt-10 text-slate-400 font-medium">— CEO, Global Financial Institution</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOR JOB SEEKERS -->
-    <section id="jobseekers" class="py-20 lg:py-28 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 text-center">
-            <h2 class="text-4xl sm:text-5xl font-semibold">For Job Seekers</h2>
-            <p class="mt-6 text-lg text-slate-600">Access exclusive opportunities and elevate your career with premium support.</p>
-            <div class="grid md:grid-cols-3 gap-8 mt-16">
-                <div class="premium-card border border-slate-100 rounded-3xl p-10">
-                    <i class="fa-solid fa-globe text-6xl text-teal-500"></i>
-                    <h4 class="mt-8 text-2xl font-semibold">Exclusive Roles</h4>
-                    <p class="mt-4 text-slate-600">Confidential positions not available on the open market.</p>
-                </div>
-                <div class="premium-card border border-slate-100 rounded-3xl p-10">
-                    <i class="fa-solid fa-briefcase text-6xl text-amber-500"></i>
-                    <h4 class="mt-8 text-2xl font-semibold">Career Advisory</h4>
-                    <p class="mt-4 text-slate-600">Expert CV optimisation and interview preparation.</p>
-                </div>
-                <div class="premium-card border border-slate-100 rounded-3xl p-10">
-                    <i class="fa-solid fa-handshake text-6xl text-teal-500"></i>
-                    <h4 class="mt-8 text-2xl font-semibold">Ongoing Support</h4>
-                    <p class="mt-4 text-slate-600">6 & 12-month check-ins and lifetime network access.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CAREERS -->
-    <section id="careers" class="py-20 lg:py-28 bg-slate-50">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl sm:text-5xl font-semibold">Current Global Opportunities</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="premium-card bg-white border border-slate-100 rounded-3xl p-8">
-                    <span class="text-teal-500 text-sm">REMOTE • GLOBAL</span>
-                    <h4 class="text-2xl font-semibold mt-4">Chief Technology Officer</h4>
-                    <p class="text-slate-500 mt-2">$280k – $350k USD + Equity</p>
-                    <button onclick="applyToJob()" class="mt-8 w-full py-5 border border-teal-600 hover:bg-teal-600 hover:text-white rounded-3xl font-medium">Apply Confidentially</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-20 lg:py-28 bg-gradient-to-br from-slate-900 to-slate-950 text-white">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
-            <div class="grid lg:grid-cols-12 gap-16 items-start">
-                <div class="lg:col-span-5">
-                    <h2 class="text-4xl sm:text-5xl font-semibold leading-tight">Let's Connect Globally</h2>
-                    <p class="mt-6 text-lg text-slate-300">Whether you're hiring elite talent or seeking your next leadership role, our team is ready.</p>
-                    
-                    <div class="mt-14 space-y-10">
-                        <div>
-                            <div class="text-sm tracking-widest text-slate-400">PHONE / WHATSAPP</div>
-                            <a href="tel:+2349054303209" class="text-3xl font-medium">+234 905 430 3209</a>
-                        </div>
-                        <div>
-                            <div class="text-sm tracking-widest text-slate-400">EMAIL</div>
-                            <a href="mailto:euniqcorporateservices@gmail.com" class="text-3xl font-medium break-all">euniqcorporateservices@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7 bg-white text-slate-900 rounded-3xl p-8 lg:p-12">
-                    <form onsubmit="handleSubmit(event)" class="contact-form space-y-7">
-                        <input type="text" placeholder="Full Name" required class="w-full px-7 py-6 rounded-3xl bg-slate-100 focus:outline-none text-base">
-                        <input type="text" placeholder="Company / Current Role" class="w-full px-7 py-6 rounded-3xl bg-slate-100 focus:outline-none text-base">
-                        <input type="text" placeholder="Email or Phone" required class="w-full px-7 py-6 rounded-3xl bg-slate-100 focus:outline-none text-base">
-                        <textarea placeholder="How can we help you?" rows="5" class="w-full px-7 py-6 rounded-3xl bg-slate-100 focus:outline-none text-base resize-none"></textarea>
-                        <button type="submit" class="w-full py-7 bg-gradient-to-r from-teal-500 to-amber-600 text-white font-semibold rounded-3xl text-lg">SEND MESSAGE</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 py-20">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
-                <div class="col-span-2 md:col-span-1">
-                    <img src="https://i.imgur.com/kZCcLmP.png" 
-                         alt="Euniq Corporate Services" 
-                         class="h-14 object-contain">
-                    <p class="mt-8 text-sm leading-relaxed">Premium global recruitment firm delivering discreet executive search and elite talent solutions worldwide.</p>
-                </div>
                 <div>
-                    <h4 class="font-semibold text-white mb-6">Company</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#about" class="hover:text-white">About</a></li>
-                        <li><a href="#services" class="hover:text-white">Services</a></li>
-                        <li><a href="#careers" class="hover:text-white">Careers</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-6">Quick Links</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#employers" class="hover:text-white">For Employers</a></li>
-                        <li><a href="#jobseekers" class="hover:text-white">For Job Seekers</a></li>
-                    </ul>
-                </div>
-                <div class="col-span-2 md:col-span-1">
-                    <h4 class="font-semibold text-white mb-6">Contact</h4>
-                    <a href="tel:+2349054303209" class="block text-xl hover:text-white">+234 905 430 3209</a>
-                    <a href="mailto:euniqcorporateservices@gmail.com" class="block text-xl hover:text-white mt-2 break-all">euniqcorporateservices@gmail.com</a>
+                    <span class="text-xl sm:text-2xl font-semibold">Euniq</span>
+                    <p class="text-[10px] font-medium text-teal-600 -mt-1 tracking-widest">CORPORATE SERVICES</p>
                 </div>
             </div>
-            <div class="border-t border-slate-800 mt-20 pt-10 text-center text-xs">
-                © 2026 Euniq Corporate Services • Remote-First Global Operations • All Rights Reserved
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-x-9 text-base font-medium text-slate-700">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#employers" class="nav-link">For Employers</a>
+                <a href="#jobseekers" class="nav-link">For Job Seekers</a>
+                <a href="#careers" class="nav-link">Careers</a>
+                <a href="#insights" class="nav-link">Insights</a>
+            </div>
+
+            <div class="flex items-center gap-x-5">
+                <a href="tel:+2349054303209" class="hidden md:flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-teal-600">
+                    <i class="fa-solid fa-phone"></i>
+                    +234 905 430 3209
+                </a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<!-- HERO (UNCHANGED) -->
+<header id="home" class="relative h-screen overflow-hidden text-white">
+    <div id="slide-1" class="hero-slide active" style="background: linear-gradient(rgba(17,24,39,0.88), rgba(17,24,39,0.88)), url('https://picsum.photos/id/1015/2000/1200') center/cover;">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 h-full flex items-center">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight">
+                    Connecting elite global talent with visionary organizations
+                </h1>
             </div>
         </div>
-    </footer>
+    </div>
+</header>
 
-    <script>
-        let currentSlide = 1;
-        function showSlide(n) {
-            document.querySelectorAll('.hero-slide').forEach(s => s.classList.remove('active'));
-            document.getElementById('slide-' + n).classList.add('active');
-            document.querySelectorAll('[id^="dot-"]').forEach(d => d.classList.remove('bg-amber-400'));
-            document.getElementById('dot-' + n).classList.add('bg-amber-400');
-            currentSlide = n;
-        }
+<!-- FOOTER -->
+<footer class="bg-slate-950 text-slate-400 py-20">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6">
 
-        setInterval(() => {
-            let next = currentSlide + 1;
-            if (next > 3) next = 1;
-            showSlide(next);
-        }, 6500);
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('mobile-icon');
-            menu.classList.toggle('hidden');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-xmark');
-        }
+            <div class="col-span-2 md:col-span-1">
+                <!-- LOGO UPDATED -->
+                <img src="logo.png" 
+                     alt="Euniq Corporate Services" 
+                     class="h-14 object-contain">
 
-        function applyToJob() {
-            alert("Thank you! Your application has been received.\nOur team will contact you shortly.");
-        }
+                <p class="mt-8 text-sm leading-relaxed">
+                    Premium global recruitment firm delivering discreet executive search and elite talent solutions worldwide.
+                </p>
+            </div>
 
-        function handleSubmit(e) {
-            e.preventDefault();
-            alert("Thank you! Your message has been received.\nWe will reply shortly.\n\nEuniq Corporate Services");
-            e.target.reset();
-        }
+        </div>
 
-        console.log("%c✅ Euniq Corporate Services - Premium Version with Your Logo", "color:#14b8a6; font-weight:600");
-    </script>
+        <div class="border-t border-slate-800 mt-20 pt-10 text-center text-xs">
+            © 2026 Euniq Corporate Services • All Rights Reserved
+        </div>
+
+    </div>
+</footer>
+
+<script>
+    let currentSlide = 1;
+    function showS
+</script>
+
 </body>
 </html>
