@@ -14,16 +14,9 @@
             --gold: #d4af77;
         }
         
-        * { 
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
-        
-        .tail-container * { 
-            font-family: 'Inter', system-ui, sans-serif; 
-        }
-        .heading { 
-            font-family: 'Playfair Display', sans-serif; 
-        }
+        * { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .tail-container * { font-family: 'Inter', system-ui, sans-serif; }
+        .heading { font-family: 'Playfair Display', sans-serif; }
 
         .hero-bg {
             background: linear-gradient(rgba(10, 37, 64, 0.88), rgba(10, 37, 64, 0.92)), 
@@ -42,9 +35,7 @@
             left: 0;
             background-color: #d4af77;
         }
-        .nav-link:hover:after { 
-            width: 100%; 
-        }
+        .nav-link:hover:after { width: 100%; }
 
         .industry-card {
             transition: all 0.4s ease;
@@ -53,24 +44,13 @@
             transform: translateY(-10px);
             box-shadow: 0 25px 50px -12px rgb(212 175 119 / 0.15);
         }
-
-        /* Improved mobile menu */
-        #mobile-menu {
-            animation: slideDown 0.3s ease forwards;
-        }
-        
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 <body class="tail-container bg-white text-gray-900 overflow-x-hidden">
 
-    <!-- NAVBAR - Fixed alignment -->
+    <!-- NAVBAR -->
     <nav class="bg-[#0a2540] text-white sticky top-0 z-50 shadow-sm">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-10 py-6 flex items-center justify-between">
-            <!-- Logo + Full Company Name -->
             <div class="flex items-center gap-4">
                 <img src="logo.png" alt="Euniq Logo" class="h-11 w-auto flex-shrink-0">
                 <div class="leading-none">
@@ -79,7 +59,7 @@
                 </div>
             </div>
 
-            <!-- Desktop Navigation - Always aligned -->
+            <!-- Desktop Nav -->
             <div class="hidden lg:flex items-center gap-10 text-base font-medium">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
@@ -90,9 +70,8 @@
             </div>
 
             <div class="flex items-center gap-5">
-                <a href="tel:+2349054303209" class="hidden md:flex items-center gap-2 text-sm font-medium">
-                    <i class="fas fa-phone"></i> 
-                    <span class="whitespace-nowrap">+234 905 430 3209</span>
+                <a href="tel:+2349054303209" class="hidden md:flex items-center gap-2 text-sm font-medium whitespace-nowrap">
+                    <i class="fas fa-phone"></i> +234 905 430 3209
                 </a>
                 <a href="mailto:recruitment@euniqcorporateservices.com" 
                    class="bg-[#d4af77] text-[#0a2540] hover:bg-amber-300 px-8 py-3 rounded-3xl font-semibold text-sm flex items-center gap-2 whitespace-nowrap">
@@ -104,7 +83,7 @@
             </div>
         </div>
 
-        <!-- Mobile Menu - Fixed with better visibility -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-[#0a2540] border-t border-white/10 px-6 py-10">
             <div class="flex flex-col gap-8 text-lg font-medium">
                 <a href="index.html" class="py-3">Home</a>
@@ -136,9 +115,9 @@
                     Premium global recruitment company delivering world-class talent to visionary organizations.
                 </p>
                 <div class="mt-12 flex flex-col sm:flex-row gap-5">
-                    <a href="jobs.html" class="bg-[#d4af77] text-[#0a2540] hover:bg-amber-300 px-10 md:px-12 py-6 rounded-3xl font-semibold text-lg md:text-xl text-center">Browse Open Roles</a>
+                    <a href="jobs.html" class="bg-[#d4af77] text-[#0a2540] hover:bg-amber-300 px-12 py-6 rounded-3xl font-semibold text-xl text-center">Browse Open Roles</a>
                     <button onclick="document.getElementById('post-job-modal').classList.toggle('hidden')" 
-                            class="border-2 border-white hover:bg-white hover:text-[#0a2540] px-10 md:px-12 py-6 rounded-3xl font-semibold text-lg md:text-xl">Post a Vacancy</button>
+                            class="border-2 border-white hover:bg-white hover:text-[#0a2540] px-12 py-6 rounded-3xl font-semibold text-xl">Post a Vacancy</button>
                 </div>
             </div>
         </div>
@@ -188,7 +167,7 @@
         </div>
     </section>
 
-    <!-- INDUSTRIES - Now with 6 recruitment-related images -->
+    <!-- INDUSTRIES - Fixed with recruitment-related images -->
     <section id="industries" class="py-24 md:py-28 bg-white">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-10">
             <div class="text-center mb-16">
@@ -197,7 +176,6 @@
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
-                <!-- Tech -->
                 <div class="industry-card bg-white rounded-3xl overflow-hidden shadow-sm">
                     <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" 
                          alt="Technology Recruitment" class="w-full h-44 md:h-52 object-cover">
@@ -205,8 +183,6 @@
                         <h3 class="text-xl md:text-2xl font-semibold">Technology</h3>
                     </div>
                 </div>
-                
-                <!-- Engineering -->
                 <div class="industry-card bg-white rounded-3xl overflow-hidden shadow-sm">
                     <img src="https://images.unsplash.com/photo-1581091226825-a6a35c6c4c6c?auto=format&fit=crop&w=800&q=80" 
                          alt="Engineering Recruitment" class="w-full h-44 md:h-52 object-cover">
@@ -214,8 +190,6 @@
                         <h3 class="text-xl md:text-2xl font-semibold">Engineering</h3>
                     </div>
                 </div>
-                
-                <!-- Marketing -->
                 <div class="industry-card bg-white rounded-3xl overflow-hidden shadow-sm">
                     <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" 
                          alt="Marketing Recruitment" class="w-full h-44 md:h-52 object-cover">
@@ -223,8 +197,6 @@
                         <h3 class="text-xl md:text-2xl font-semibold">Marketing</h3>
                     </div>
                 </div>
-                
-                <!-- Finance -->
                 <div class="industry-card bg-white rounded-3xl overflow-hidden shadow-sm">
                     <img src="https://images.unsplash.com/photo-1554224155-6726b9b8b8b0?auto=format&fit=crop&w=800&q=80" 
                          alt="Finance Recruitment" class="w-full h-44 md:h-52 object-cover">
@@ -232,8 +204,6 @@
                         <h3 class="text-xl md:text-2xl font-semibold">Finance</h3>
                     </div>
                 </div>
-                
-                <!-- FMCG -->
                 <div class="industry-card bg-white rounded-3xl overflow-hidden shadow-sm">
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a9c?auto=format&fit=crop&w=800&q=80" 
                          alt="FMCG Recruitment" class="w-full h-44 md:h-52 object-cover">
@@ -241,8 +211,6 @@
                         <h3 class="text-xl md:text-2xl font-semibold">FMCG</h3>
                     </div>
                 </div>
-                
-                <!-- Healthcare (New Industry) -->
                 <div class="industry-card bg-white rounded-3xl overflow-hidden shadow-sm">
                     <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80" 
                          alt="Healthcare Recruitment" class="w-full h-44 md:h-52 object-cover">
@@ -289,20 +257,20 @@
                     <div class="grid grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium mb-2">Name</label>
-                            <input type="text" required class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:border-[#d4af77] focus:outline-none">
+                            <input type="text" required class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:border-[#d4af77]">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-2">Company / Role</label>
-                            <input type="text" class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:border-[#d4af77] focus:outline-none">
+                            <input type="text" class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:border-[#d4af77]">
                         </div>
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2">Email or Phone</label>
-                        <input type="text" required class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:border-[#d4af77] focus:outline-none">
+                        <input type="text" required class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:border-[#d4af77]">
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2">Message</label>
-                        <textarea rows="5" class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:border-[#d4af77] focus:outline-none"></textarea>
+                        <textarea rows="5" class="w-full px-6 py-5 border border-gray-200 rounded-3xl focus:border-[#d4af77]"></textarea>
                     </div>
                     <button type="submit" class="w-full bg-[#0a2540] text-white py-7 rounded-3xl font-semibold text-xl">Send Message</button>
                 </form>
@@ -313,28 +281,32 @@
     <!-- FOOTER -->
     <footer class="bg-[#0a2540] text-white py-20">
         <div class="max-w-screen-2xl mx-auto px-6 md:px-10">
-            <div class="grid md:grid-cols-12 gap-y-12">
-                <div class="md:col-span-5">
+            <div class="flex flex-col md:flex-row justify-between gap-12">
+                <div>
                     <div class="flex items-center gap-4">
                         <img src="logo.png" alt="Logo" class="h-10 w-auto">
                         <span class="text-3xl heading">EUNIQ CORPORATE SERVICES</span>
                     </div>
                     <p class="mt-6 text-white/70 max-w-md">Premium global recruitment connecting exceptional talent with visionary organizations.</p>
                 </div>
-                <div class="md:col-span-2">
-                    <h5 class="uppercase text-xs text-[#d4af77] mb-6">Company</h5>
-                    <a href="#" class="block py-2 text-white/70 hover:text-white">About Us</a>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-x-16 gap-y-10 text-sm">
+                    <div>
+                        <h5 class="uppercase text-[#d4af77] mb-6">Company</h5>
+                        <a href="#" class="block py-2 text-white/70 hover:text-white">About Us</a>
+                    </div>
+                    <div>
+                        <h5 class="uppercase text-[#d4af77] mb-6">For Candidates</h5>
+                        <a href="jobs.html" class="block py-2 text-white/70 hover:text-white">Browse Jobs</a>
+                    </div>
+                    <div>
+                        <h5 class="uppercase text-[#d4af77] mb-6">Contact</h5>
+                        <a href="tel:+2349054303209" class="block py-2">+234 905 430 3209</a>
+                        <a href="mailto:recruitment@euniqcorporateservices.com" class="block py-2">recruitment@euniqcorporateservices.com</a>
+                    </div>
                 </div>
-                <div class="md:col-span-2">
-                    <h5 class="uppercase text-xs text-[#d4af77] mb-6">For Candidates</h5>
-                    <a href="jobs.html" class="block py-2 text-white/70 hover:text-white">Browse Jobs</a>
-                </div>
-                <div class="md:col-span-3">
-                    <h5 class="uppercase text-xs text-[#d4af77] mb-6">Contact</h5>
-                    <a href="tel:+2349054303209" class="block py-2">+234 905 430 3209</a>
-                    <a href="mailto:recruitment@euniqcorporateservices.com" class="block py-2">recruitment@euniqcorporateservices.com</a>
-                    <p class="mt-12 text-xs text-white/40">© 2026 Euniq Corporate Services</p>
-                </div>
+            </div>
+            <div class="text-center text-xs text-white/40 mt-20">
+                © 2026 Euniq Corporate Services. All Rights Reserved.
             </div>
         </div>
     </footer>
@@ -360,11 +332,8 @@
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
             menu.classList.toggle('hidden');
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
-            }
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         }
 
         function handleSubmit(e) {
@@ -375,11 +344,10 @@
 
         function postVacancy(e) {
             e.preventDefault();
-            alert("🎉 Vacancy posted successfully! It will appear on the Vacancies page.");
+            alert("🎉 Vacancy posted successfully!");
             document.getElementById('post-job-modal').classList.add('hidden');
         }
 
-        // Auto-close mobile menu on larger screens
         window.addEventListener('resize', () => {
             if (window.innerWidth >= 1024) {
                 document.getElementById('mobile-menu').classList.add('hidden');
@@ -387,8 +355,6 @@
                 if (icon.classList.contains('fa-times')) icon.classList.replace('fa-times', 'fa-bars');
             }
         });
-
-        console.log('%c✅ Euniq Corporate Services - Fully aligned & updated version loaded', 'color:#d4af77;font-size:14px;font-weight:700');
     </script>
 </body>
 </html>
