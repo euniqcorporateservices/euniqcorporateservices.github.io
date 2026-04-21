@@ -4,127 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Euniq Corporate Services | Global Executive Recruitment</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-        
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-        }
-        
-        .heading-font {
-            font-family: 'Playfair Display', sans-serif;
-        }
+
+        body { font-family: 'Inter', sans-serif; }
+        .heading-font { font-family: 'Playfair Display', sans-serif; }
 
         .hero-bg {
             background: linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
         }
 
-        .nav-link {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .nav-link:hover {
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-        }
-
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-in-out;
-        }
-        
-        .mobile-menu.open {
-            max-height: 500px;
-        }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out; }
+        .mobile-menu.open { max-height: 500px; }
     </style>
 </head>
-<body class="bg-zinc-950 text-white overflow-x-hidden">
 
-    <!-- YOUR ORIGINAL FILE CONTENT REMAINS EXACTLY THE SAME -->
-    <!-- I did NOT modify anything above this point -->
+<body class="bg-zinc-950 text-white">
 
-    <!-- KEEP EVERYTHING EXACTLY AS YOU SENT -->
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-zinc-950/95 border-b border-white/10 z-50">
+<div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
-    <!-- ONLY SCRIPT BELOW IS UPDATED -->
+    <div class="flex items-center gap-3">
+        <img src="logo.png" class="h-10">
+        <span class="text-xl font-bold heading-font">Euniq</span>
+    </div>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let menuOpen = false;
+    <div class="hidden md:flex gap-6 text-sm">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+    </div>
 
-        function toggleMobileMenu() {
-            menuOpen = !menuOpen;
-            if (menuOpen) {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('open');
-                mobileButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-            } else {
-                mobileMenu.classList.remove('open');
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                }, 400);
-                mobileButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
-            }
-        }
+    <a href="mailto:recruitment@euniqcorporateservices.com?subject=Recruitment Inquiry&body=Hello Euniq Team," 
+       class="px-5 py-2 border rounded-full text-sm">
+       Get In Touch
+    </a>
 
-        mobileButton.addEventListener('click', toggleMobileMenu);
+</div>
+</nav>
 
-        // ✅ EMAIL SENDING FUNCTION (ADDED)
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+<!-- HERO -->
+<section class="hero-bg min-h-screen flex items-center justify-center text-center px-6">
+    <div>
+        <h1 class="text-5xl md:text-7xl font-bold heading-font mb-6">
+            Premium Talent.<br>Global Reach.
+        </h1>
+        <p class="text-zinc-400 mb-10">We connect companies with top global professionals.</p>
 
-            const inputs = this.querySelectorAll('input, textarea');
+        <button onclick="document.getElementById('contact-modal').classList.remove('hidden')" 
+                class="bg-white text-black px-8 py-4 rounded-2xl font-semibold">
+            Hire Talent
+        </button>
+    </div>
+</section>
 
-            const name = inputs[0].value;
-            const email = inputs[1].value;
-            const phone = inputs[2].value;
-            const message = inputs[3].value;
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center p-6">
 
-            const subject = encodeURIComponent("New Recruitment Request - Euniq");
-            const body = encodeURIComponent(
-                `Name/Company: ${name}\n\nEmail: ${email}\n\nPhone: ${phone}\n\nMessage:\n${message}`
-            );
+<div class="bg-zinc-900 rounded-3xl max-w-lg w-full">
 
-            window.location.href = `mailto:recruitment@euniqcorporateservices.com?subject=${subject}&body=${body}`;
-        });
+<div class="p-8 border-b border-white/10 flex justify-between">
+    <h3 class="text-xl font-semibold">Start Recruitment</h3>
+    <button onclick="document.getElementById('contact-modal').classList.add('hidden')">×</button>
+</div>
 
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') !== '#contact-modal') {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
+<div class="p-8">
 
-        // Close mobile menu on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape" && menuOpen) {
-                toggleMobileMenu();
-            }
-            if (e.key === "Escape") {
-                const modal = document.getElementById('contact-modal');
-                if (!modal.classList.contains('hidden')) modal.classList.add('hidden');
-            }
-        });
-    </script>
+<form action="https://formsubmit.co/euniqcorporateservices@gmail.com" method="POST" class="space-y-6">
+
+<input type="hidden" name="_captcha" value="false">
+
+<div>
+<input type="text" name="name" required placeholder="Your Name / Company"
+class="w-full bg-zinc-800 p-4 rounded-xl">
+</div>
+
+<div class="grid grid-cols-2 gap-4">
+<input type="email" name="email" required placeholder="Email"
+class="bg-zinc-800 p-4 rounded-xl">
+
+<input type="tel" name="phone" placeholder="Phone"
+class="bg-zinc-800 p-4 rounded-xl">
+</div>
+
+<textarea name="message" required placeholder="Your request..."
+class="w-full bg-zinc-800 p-4 rounded-xl"></textarea>
+
+<button type="submit"
+class="w-full bg-white text-black py-4 rounded-xl font-semibold">
+Submit Request
+</button>
+
+</form>
+
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center py-10 border-t border-white/10">
+
+<p class="text-zinc-400 mb-4">Contact Us</p>
+
+<div class="space-y-2 text-sm">
+<a href="mailto:recruitment@euniqcorporateservices.com?subject=Recruitment Inquiry" class="block">
+recruitment@euniqcorporateservices.com
+</a>
+
+<a href="mailto:contact@euniqcorporateservices.com?subject=General Inquiry" class="block">
+contact@euniqcorporateservices.com
+</a>
+
+<a href="tel:+2348093489681" class="block">
++234 809 348 9681
+</a>
+</div>
+
+</footer>
+
+<script>
+const btn = document.getElementById('mobile-menu-button');
+</script>
 
 </body>
 </html>
