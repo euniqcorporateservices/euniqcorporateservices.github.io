@@ -3,133 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Euniq Corporate Services</title>
+<title>Euniq Corporate Services | Global Executive Recruitment</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
-body { font-family: 'Inter', sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+body { font-family: 'Inter', system-ui, sans-serif; }
+.heading-font { font-family: 'Playfair Display', sans-serif; }
+
 .hero-bg {
-background: linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+background: linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.85)),
+url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
 }
-.mobile-menu { max-height:0; overflow:hidden; transition:0.4s; }
-.mobile-menu.open { max-height:500px; }
+
+.mobile-menu {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.4s ease-in-out;
+}
+.mobile-menu.open { max-height: 500px; }
 </style>
 </head>
 
-<body class="bg-zinc-950 text-white">
+<body class="bg-zinc-950 text-white overflow-x-hidden">
 
-<!-- NAV -->
-<nav class="fixed w-full bg-zinc-950 border-b border-white/10 z-50">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/95 backdrop-blur-lg border-b border-white/10">
+<div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
 
-<div class="text-xl font-bold">Euniq</div>
-
-<div class="hidden md:flex gap-6">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
+<div class="flex items-center gap-3">
+<img src="logo.png" class="h-10">
+<div>
+<span class="text-2xl font-bold heading-font">Euniq</span>
+<span class="text-zinc-400 text-sm block">Corporate Services</span>
+</div>
 </div>
 
-<a href="mailto:recruitment@euniqcorporateservices.com?subject=Inquiry"
-class="bg-white text-black px-5 py-2 rounded-full">
-Contact
-</a>
+<div class="hidden md:flex gap-6 text-sm">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#how">How It Works</a>
+<a href="#talent">For Talent</a>
+<a href="#companies">For Companies</a>
+</div>
 
+<div class="hidden md:flex gap-4">
+<a href="mailto:recruitment@euniqcorporateservices.com?subject=Inquiry&body=Hello Euniq," class="px-4 py-2 border rounded-full">Get In Touch</a>
+<button onclick="openEmail()" class="px-4 py-2 bg-white text-black rounded-full">Start Recruitment</button>
+</div>
+
+<button id="mobile-menu-button" class="md:hidden text-2xl">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+</div>
+
+<div id="mobile-menu" class="mobile-menu hidden md:hidden p-6">
+<a href="#about">About</a><br>
+<a href="#services">Services</a><br>
+<a href="#how">How It Works</a><br>
+<a href="#talent">Talent</a><br>
+<a href="#companies">Companies</a><br><br>
+
+<a href="mailto:recruitment@euniqcorporateservices.com">Email Us</a>
 </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero-bg min-h-screen flex items-center justify-center text-center px-6">
 <div>
-<h1 class="text-5xl font-bold mb-6">Global Executive Recruitment</h1>
-<p class="text-zinc-300 mb-10">Premium talent. Global reach.</p>
+<h1 class="text-5xl heading-font mb-6">Premium Talent. Global Reach.</h1>
+<p class="text-zinc-400 mb-8">Executive recruitment redefined.</p>
 
-<a href="mailto:recruitment@euniqcorporateservices.com?subject=Hiring Request"
-class="bg-white text-black px-8 py-4 rounded-xl text-lg">
-Hire Talent
-</a>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="py-20 text-center max-w-3xl mx-auto">
-<h2 class="text-3xl mb-6">About Us</h2>
-<p class="text-zinc-400">
-We connect companies with elite professionals globally.
-</p>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="py-20 bg-black text-center">
-<h2 class="text-3xl mb-10">Services</h2>
-
-<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-<div class="bg-zinc-900 p-6 rounded-xl">
-<h3 class="text-xl mb-3">Executive Search</h3>
-<p class="text-zinc-400">Top leadership hiring</p>
-</div>
-
-<div class="bg-zinc-900 p-6 rounded-xl">
-<h3 class="text-xl mb-3">Talent Acquisition</h3>
-<p class="text-zinc-400">Global specialists</p>
-</div>
-
-<div class="bg-zinc-900 p-6 rounded-xl">
-<h3 class="text-xl mb-3">Advisory</h3>
-<p class="text-zinc-400">Market insights</p>
+<div class="flex gap-4 justify-center">
+<button onclick="openEmail()" class="px-6 py-3 bg-white text-black rounded-xl">Hire Talent</button>
+<a href="#talent" class="px-6 py-3 border rounded-xl">I'm a Candidate</a>
 </div>
 </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="py-20 text-center">
-<h2 class="text-3xl mb-8">Contact Us</h2>
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center">
+<div class="bg-zinc-900 p-8 rounded-2xl w-full max-w-lg">
 
-<form id="contact-form" class="max-w-xl mx-auto space-y-6">
+<h3 class="text-xl mb-4">Start Recruitment</h3>
 
-<input type="text" placeholder="Name / Company" required class="w-full p-4 bg-zinc-800 rounded">
+<form id="contact-form" class="space-y-4">
+<input id="name" placeholder="Name / Company" required class="w-full p-3 bg-zinc-800 rounded">
+<input id="email" type="email" placeholder="Email" required class="w-full p-3 bg-zinc-800 rounded">
+<textarea id="message" placeholder="Message" required class="w-full p-3 bg-zinc-800 rounded"></textarea>
 
-<input type="email" placeholder="Email" required class="w-full p-4 bg-zinc-800 rounded">
-
-<input type="tel" placeholder="Phone" class="w-full p-4 bg-zinc-800 rounded">
-
-<textarea placeholder="Message" required class="w-full p-4 bg-zinc-800 rounded"></textarea>
-
-<button type="submit" class="bg-white text-black px-8 py-4 rounded-xl w-full">
-Send Message
-</button>
-
+<button type="submit" class="w-full bg-white text-black py-3 rounded">Send</button>
 </form>
-</section>
 
-<!-- FOOTER -->
-<footer class="py-10 text-center text-zinc-500">
-© 2026 Euniq Corporate Services
-</footer>
+</div>
+</div>
 
 <script>
+// Mobile menu
+const btn = document.getElementById('mobile-menu-button');
+const menu = document.getElementById('mobile-menu');
+
+btn.onclick = () => {
+menu.classList.toggle('hidden');
+menu.classList.toggle('open');
+};
+
+// Open email shortcut
+function openEmail() {
+window.location.href =
+"mailto:recruitment@euniqcorporateservices.com?subject=Recruitment Request&body=Hello Euniq,%0D%0A%0D%0AI would like to hire talent.";
+}
+
 // FORM → EMAIL
 document.getElementById('contact-form').addEventListener('submit', function(e){
 e.preventDefault();
 
-const name = this.querySelector('input[type="text"]').value;
-const email = this.querySelector('input[type="email"]').value;
-const phone = this.querySelector('input[type="tel"]').value;
-const message = this.querySelector('textarea').value;
+let name = document.getElementById('name').value;
+let email = document.getElementById('email').value;
+let message = document.getElementById('message').value;
 
-const subject = encodeURIComponent("New Inquiry - Euniq");
-const body = encodeURIComponent(
-`Name: ${name}
-Email: ${email}
-Phone: ${phone}
+let mailtoLink =
+`mailto:recruitment@euniqcorporateservices.com?subject=New Client Inquiry from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
 
-Message:
-${message}`
-);
-
-window.location.href = `mailto:recruitment@euniqcorporateservices.com?subject=${subject}&body=${body}`;
+window.location.href = mailtoLink;
 });
 </script>
 
