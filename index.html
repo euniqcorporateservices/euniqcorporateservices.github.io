@@ -4,107 +4,134 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Euniq Corporate Services</title>
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
-body { font-family: Arial, sans-serif; }
+body { font-family: 'Inter', sans-serif; }
 .hero-bg {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
-    url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+background: linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
 }
+.mobile-menu { max-height:0; overflow:hidden; transition:0.4s; }
+.mobile-menu.open { max-height:500px; }
 </style>
 </head>
 
-<body class="bg-black text-white">
+<body class="bg-zinc-950 text-white">
 
-<!-- NAVBAR -->
-<nav class="flex justify-between items-center p-6 border-b border-gray-800">
-    <h1 class="text-xl font-bold">Euniq Corporate Services</h1>
+<!-- NAV -->
+<nav class="fixed w-full bg-zinc-950 border-b border-white/10 z-50">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-    <div class="flex gap-6">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="mailto:contact@euniqcorporateservices.com" class="border px-4 py-2 rounded-full">
-            Contact Us
-        </a>
-    </div>
+<div class="text-xl font-bold">Euniq</div>
+
+<div class="hidden md:flex gap-6">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
+
+<a href="mailto:recruitment@euniqcorporateservices.com?subject=Inquiry"
+class="bg-white text-black px-5 py-2 rounded-full">
+Contact
+</a>
+
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero-bg min-h-screen flex items-center justify-center text-center px-6">
-    <div>
-        <h1 class="text-5xl font-bold mb-6">Premium Talent. Global Reach.</h1>
-        <p class="text-gray-300 mb-8">We connect companies with top professionals worldwide.</p>
+<div>
+<h1 class="text-5xl font-bold mb-6">Global Executive Recruitment</h1>
+<p class="text-zinc-300 mb-10">Premium talent. Global reach.</p>
 
-        <a href="mailto:recruitment@euniqcorporateservices.com"
-           class="bg-white text-black px-8 py-4 rounded-xl font-semibold">
-           Hire Talent
-        </a>
-    </div>
+<a href="mailto:recruitment@euniqcorporateservices.com?subject=Hiring Request"
+class="bg-white text-black px-8 py-4 rounded-xl text-lg">
+Hire Talent
+</a>
+</div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="p-12 text-center">
-    <h2 class="text-3xl font-bold mb-6">About Us</h2>
-    <p class="text-gray-400 max-w-2xl mx-auto">
-        Euniq Corporate Services is a global recruitment firm helping companies hire top executives and specialists.
-    </p>
+<section id="about" class="py-20 text-center max-w-3xl mx-auto">
+<h2 class="text-3xl mb-6">About Us</h2>
+<p class="text-zinc-400">
+We connect companies with elite professionals globally.
+</p>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="p-12 bg-gray-900 text-center">
-    <h2 class="text-3xl font-bold mb-10">Our Services</h2>
+<section id="services" class="py-20 bg-black text-center">
+<h2 class="text-3xl mb-10">Services</h2>
 
-    <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-6 bg-black rounded-xl">Executive Search</div>
-        <div class="p-6 bg-black rounded-xl">Talent Acquisition</div>
-        <div class="p-6 bg-black rounded-xl">HR Advisory</div>
-    </div>
+<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+<div class="bg-zinc-900 p-6 rounded-xl">
+<h3 class="text-xl mb-3">Executive Search</h3>
+<p class="text-zinc-400">Top leadership hiring</p>
+</div>
+
+<div class="bg-zinc-900 p-6 rounded-xl">
+<h3 class="text-xl mb-3">Talent Acquisition</h3>
+<p class="text-zinc-400">Global specialists</p>
+</div>
+
+<div class="bg-zinc-900 p-6 rounded-xl">
+<h3 class="text-xl mb-3">Advisory</h3>
+<p class="text-zinc-400">Market insights</p>
+</div>
+</div>
 </section>
 
-<!-- CONTACT FORM -->
-<section class="p-12 text-center">
-    <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+<!-- CONTACT -->
+<section id="contact" class="py-20 text-center">
+<h2 class="text-3xl mb-8">Contact Us</h2>
 
-    <form action="https://formsubmit.co/contact@euniqcorporateservices.com" method="POST" class="max-w-xl mx-auto space-y-6">
+<form id="contact-form" class="max-w-xl mx-auto space-y-6">
 
-        <!-- SETTINGS -->
-        <input type="hidden" name="_subject" value="New Client Inquiry - Euniq">
-        <input type="hidden" name="_captcha" value="false">
+<input type="text" placeholder="Name / Company" required class="w-full p-4 bg-zinc-800 rounded">
 
-        <input type="text" name="name" placeholder="Your Name" required
-            class="w-full p-4 rounded bg-gray-800">
+<input type="email" placeholder="Email" required class="w-full p-4 bg-zinc-800 rounded">
 
-        <input type="email" name="email" placeholder="Your Email" required
-            class="w-full p-4 rounded bg-gray-800">
+<input type="tel" placeholder="Phone" class="w-full p-4 bg-zinc-800 rounded">
 
-        <input type="tel" name="phone" placeholder="Phone Number"
-            class="w-full p-4 rounded bg-gray-800">
+<textarea placeholder="Message" required class="w-full p-4 bg-zinc-800 rounded"></textarea>
 
-        <textarea name="message" placeholder="Your Message" required
-            class="w-full p-4 rounded bg-gray-800"></textarea>
+<button type="submit" class="bg-white text-black px-8 py-4 rounded-xl w-full">
+Send Message
+</button>
 
-        <button type="submit"
-            class="bg-white text-black px-8 py-4 rounded-xl font-semibold w-full">
-            Send Message
-        </button>
-    </form>
+</form>
 </section>
 
 <!-- FOOTER -->
-<footer class="p-10 border-t border-gray-800 text-center">
-
-    <div class="mb-6">
-        <a href="mailto:contact@euniqcorporateservices.com">contact@euniqcorporateservices.com</a><br>
-        <a href="mailto:info@euniqcorporateservices.com">info@euniqcorporateservices.com</a><br>
-        <a href="mailto:recruitment@euniqcorporateservices.com">recruitment@euniqcorporateservices.com</a><br>
-        <a href="tel:+2348093489681">+234 809 348 9681</a>
-    </div>
-
-    <p class="text-gray-500">© 2026 Euniq Corporate Services</p>
-
+<footer class="py-10 text-center text-zinc-500">
+© 2026 Euniq Corporate Services
 </footer>
+
+<script>
+// FORM → EMAIL
+document.getElementById('contact-form').addEventListener('submit', function(e){
+e.preventDefault();
+
+const name = this.querySelector('input[type="text"]').value;
+const email = this.querySelector('input[type="email"]').value;
+const phone = this.querySelector('input[type="tel"]').value;
+const message = this.querySelector('textarea').value;
+
+const subject = encodeURIComponent("New Inquiry - Euniq");
+const body = encodeURIComponent(
+`Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}`
+);
+
+window.location.href = `mailto:recruitment@euniqcorporateservices.com?subject=${subject}&body=${body}`;
+});
+</script>
 
 </body>
 </html>
