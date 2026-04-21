@@ -496,50 +496,48 @@
             </div>
             
             <div class="p-10">
-                <form id="contact-form" 
-      action="https://formsubmit.co/euniqcorporateservices@gmail.com" 
-      method="POST" 
-      class="space-y-8">
+                <form action="https://formsubmit.co/euniqcorporateservices@gmail.com" method="POST" class="space-y-8">
 
     <!-- Disable captcha -->
     <input type="hidden" name="_captcha" value="false">
 
     <!-- Email subject -->
-    <input type="hidden" name="_subject" value="New Recruitment Request - Euniq">
+    <input type="hidden" name="_subject" value="New Recruitment Request - Euniq Corporate Services">
 
-    <!-- Redirect after submit -->
-    <input type="hidden" name="_next" value="https://euniqcorporateservices.com/thank-you.html">
+    <!-- IMPORTANT: safe redirect (prevents 404) -->
+    <input type="hidden" name="_next" value="https://euniqcorporateservices.com/#">
 
     <div>
         <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Your Name / Company</label>
-        <input type="text" name="name" required 
-               class="w-full bg-zinc-800 border border-white/10 focus:border-white/40 rounded-2xl px-7 py-6 outline-none">
+        <input type="text" name="name" required
+               class="w-full bg-zinc-800 border border-white/10 rounded-2xl px-7 py-6 outline-none">
     </div>
 
     <div class="grid grid-cols-2 gap-6">
         <div>
             <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Email</label>
-            <input type="email" name="email" required 
-                   class="w-full bg-zinc-800 border border-white/10 focus:border-white/40 rounded-2xl px-7 py-6 outline-none">
+            <input type="email" name="email" required
+                   class="w-full bg-zinc-800 border border-white/10 rounded-2xl px-7 py-6 outline-none">
         </div>
+
         <div>
             <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Phone</label>
             <input type="tel" name="phone"
-                   class="w-full bg-zinc-800 border border-white/10 focus:border-white/40 rounded-2xl px-7 py-6 outline-none">
+                   class="w-full bg-zinc-800 border border-white/10 rounded-2xl px-7 py-6 outline-none">
         </div>
     </div>
 
     <div>
-        <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Message / Role Requirements</label>
-        <textarea name="message" rows="5" required 
-                  class="w-full bg-zinc-800 border border-white/10 focus:border-white/40 rounded-3xl px-7 py-6 outline-none resize-none"></textarea>
+        <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Message</label>
+        <textarea name="message" rows="5" required
+                  class="w-full bg-zinc-800 border border-white/10 rounded-3xl px-7 py-6 outline-none"></textarea>
     </div>
 
     <button type="submit"
-            class="w-full py-7 bg-white text-black font-semibold rounded-3xl text-lg hover:bg-emerald-400 transition-colors">
-        Submit Request — We'll Respond Within Hours
+            class="w-full py-7 bg-white text-black font-semibold rounded-3xl text-lg">
+        Submit Request
     </button>
-                </form>
+</form>
             </div>
             
             <div class="px-10 py-6 bg-black text-center text-xs text-zinc-500">
@@ -570,6 +568,14 @@
         }
 
         mobileButton.addEventListener('click', toggleMobileMenu);
+
+        // Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Thank you! Our team will contact you within 4 business hours.\n\nEuniq Corporate Services");
+            document.getElementById('contact-modal').classList.add('hidden');
+        });
+
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
