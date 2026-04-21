@@ -572,12 +572,7 @@
         mobileButton.addEventListener('click', toggleMobileMenu);
 
         // Form Submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert("Thank you! Our team will contact you within 4 business hours.\n\nEuniq Corporate Services");
-            document.getElementById('contact-modal').classList.add('hidden');
-        });
-
+        
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
