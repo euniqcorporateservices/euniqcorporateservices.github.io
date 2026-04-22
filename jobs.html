@@ -4,80 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open Positions - Euniq Corporate Services</title>
-
-    <!-- SEO -->
-    <meta name="description" content="Explore executive and specialist job opportunities with Euniq Corporate Services. Apply to global roles in tech, finance, and leadership.">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-    <!-- GOOGLE JOB SCHEMA (VERY IMPORTANT) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
-
-        {
-          "@type": "JobPosting",
-          "title": "Chief Technology Officer",
-          "description": "Leading fintech startup seeking a visionary CTO to scale their engineering organization across Africa and Europe.",
-          "identifier": {
-            "@type": "PropertyValue",
-            "name": "Euniq Corporate Services",
-            "value": "CTO-001"
-          },
-          "datePosted": "2026-04-22",
-          "validThrough": "2026-06-30",
-          "employmentType": "FULL_TIME",
-          "hiringOrganization": {
-            "@type": "Organization",
-            "name": "Euniq Corporate Services",
-            "sameAs": "https://euniqcorpservices.com",
-            "logo": "https://euniqcorpservices.com/logo.png"
-          },
-          "jobLocation": {
-            "@type": "Place",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Lagos",
-              "addressCountry": "NG"
-            }
-          }
-        },
-
-        {
-          "@type": "JobPosting",
-          "title": "Head of Growth Marketing",
-          "description": "Scale a Series B healthtech company’s user acquisition across emerging markets.",
-          "identifier": {
-            "@type": "PropertyValue",
-            "name": "Euniq Corporate Services",
-            "value": "HGM-002"
-          },
-          "datePosted": "2026-04-22",
-          "validThrough": "2026-06-30",
-          "employmentType": "FULL_TIME",
-          "hiringOrganization": {
-            "@type": "Organization",
-            "name": "Euniq Corporate Services",
-            "sameAs": "https://euniqcorpservices.com",
-            "logo": "https://euniqcorpservices.com/logo.png"
-          },
-          "jobLocation": {
-            "@type": "Place",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Remote",
-              "addressCountry": "Global"
-            }
-          }
-        }
-
-      ]
-    }
-    </script>
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
         
@@ -85,63 +13,98 @@
         .heading-font { font-family: 'Playfair Display', sans-serif; }
     </style>
 </head>
-
 <body class="bg-zinc-950 text-white">
 
-    <!-- NAVBAR -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-lg border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" class="h-10">
-                <div>
-                    <span class="text-2xl font-bold heading-font">Euniq</span>
-                    <span class="text-zinc-400 text-sm block">Corporate Services</span>
-                </div>
-            </div>
-
-            <div class="hidden md:flex gap-10 text-sm">
-                <a href="index.html">Home</a>
-                <a href="jobs.html" class="text-white font-semibold">Open Positions</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="pt-32 pb-16 bg-zinc-900 text-center">
-        <h1 class="text-6xl heading-font font-bold">Open Positions</h1>
-        <p class="text-zinc-400 mt-4">Global executive and specialist roles</p>
-    </section>
-
-    <!-- JOBS -->
-    <section class="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- JOB 1 -->
-        <div class="bg-zinc-900 p-8 rounded-3xl border border-white/10">
-            <h3 class="text-2xl font-semibold mb-3">Chief Technology Officer</h3>
-            <p class="text-zinc-400 mb-6">
-                Fintech startup scaling across Africa & Europe.
-            </p>
-            <div class="flex justify-between">
-                <span class="text-zinc-500">Remote / Lagos</span>
-                <a href="mailto:recruitment@euniqcorporateservices.com?subject=Application: CTO (Euniq)"
-                   class="text-emerald-400">Apply</a>
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-lg border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <img src="logo.png" class="h-10">
+            <div>
+                <span class="text-2xl font-bold heading-font">Euniq</span>
+                <span class="text-zinc-400 text-sm block -mt-1">Corporate Services</span>
             </div>
         </div>
 
-        <!-- JOB 2 -->
-        <div class="bg-zinc-900 p-8 rounded-3xl border border-white/10">
-            <h3 class="text-2xl font-semibold mb-3">Head of Growth Marketing</h3>
-            <p class="text-zinc-400 mb-6">
-                Healthtech company expanding globally.
-            </p>
-            <div class="flex justify-between">
-                <span class="text-zinc-500">Remote</span>
-                <a href="mailto:recruitment@euniqcorporateservices.com?subject=Application: Growth Marketing"
-                   class="text-emerald-400">Apply</a>
-            </div>
+        <div class="hidden md:flex gap-10 text-sm">
+            <a href="index.html">Home</a>
+            <a href="jobs.html" class="text-white font-semibold">Open Positions</a>
         </div>
 
-    </section>
+        <a href="mailto:recruitment@euniqcorporateservices.com"
+           class="px-6 py-3 border border-white/30 rounded-full">
+            Contact
+        </a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-32 pb-16 bg-zinc-900 text-center">
+    <h1 class="text-6xl heading-font font-bold">Open Positions</h1>
+    <p class="text-zinc-400 mt-4">Apply to exclusive global roles</p>
+</section>
+
+<!-- JOBS -->
+<section class="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-3 gap-8">
+
+<!-- JOB 1 -->
+<div class="job-card bg-zinc-900 p-8 rounded-3xl">
+    <h3 class="text-2xl font-semibold">Chief Technology Officer</h3>
+    <p class="text-zinc-400 mt-3">Fintech scaling across Africa & Europe</p>
+    <div class="mt-6 flex justify-between">
+        <span class="text-sm text-zinc-500">Remote / Lagos</span>
+        <a href="https://forms.gle/tPCKpC3uMTkqLqV48" target="_blank"
+           class="text-emerald-400">Apply →</a>
+    </div>
+</div>
+
+<!-- JOB 2 -->
+<div class="job-card bg-zinc-900 p-8 rounded-3xl">
+    <h3 class="text-2xl font-semibold">Head of Growth</h3>
+    <p class="text-zinc-400 mt-3">Healthtech expansion role</p>
+    <div class="mt-6 flex justify-between">
+        <span class="text-sm text-zinc-500">Remote</span>
+        <a href="https://forms.gle/tPCKpC3uMTkqLqV48" target="_blank"
+           class="text-emerald-400">Apply →</a>
+    </div>
+</div>
+
+<!-- JOB 3 -->
+<div class="job-card bg-zinc-900 p-8 rounded-3xl">
+    <h3 class="text-2xl font-semibold">Finance Director</h3>
+    <p class="text-zinc-400 mt-3">Global investment firm</p>
+    <div class="mt-6 flex justify-between">
+        <span class="text-sm text-zinc-500">London</span>
+        <a href="https://forms.gle/tPCKpC3uMTkqLqV48" target="_blank"
+           class="text-emerald-400">Apply →</a>
+    </div>
+</div>
+
+</section>
+
+<!-- CV DATABASE SECTION (VERY IMPORTANT) -->
+<section class="max-w-5xl mx-auto px-8 py-20 text-center">
+    <h2 class="text-4xl heading-font mb-6">Join Our Talent Network</h2>
+    <p class="text-zinc-400 mb-10">
+        Submit your CV once — we match you with multiple global opportunities.
+    </p>
+
+    <!-- GOOGLE FORM EMBED -->
+    <iframe src="https://forms.gle/tPCKpC3uMTkqLqV48"
+            class="w-full h-[600px] rounded-2xl border border-white/10">
+    </iframe>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-black text-center">
+    <h2 class="text-4xl heading-font">Don't see your role?</h2>
+    <p class="text-zinc-400 mt-4">Submit your CV and we’ll match you</p>
+
+    <a href="https://forms.gle/tPCKpC3uMTkqLqV48" target="_blank"
+       class="inline-block mt-8 px-10 py-5 bg-white text-black rounded-2xl">
+        Upload CV
+    </a>
+</section>
 
 </body>
 </html>
